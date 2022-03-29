@@ -1,5 +1,7 @@
 import React from "react";
 
+import Actor from "./components/Actor";
+
 function App() {
   const actor = {
     name: 'Leonardo Dicaprio',
@@ -10,11 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <ul>
-        {Object.entries(actor).map(([key, val]) => 
-          <li key={key}>{val}</li>
-        )}
-      </ul>
+      <Actor actor={actor} />
     </div>
   );
 }
