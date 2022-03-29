@@ -1,13 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 import PropTypes from 'prop-types';
+import classes from './Actor.module.css';
 
 const Actor = (props) => {
     return (
-        <ul>
-            {Object.entries(props.actor).map(([key, val]) => 
-                <li key={key}>{val}</li>
-            )}
-        </ul>
+        <div className={classes.actor}>
+            <ul>
+                {Object.entries(props.actor).map(([key, val]) => 
+                    <li key={key}>{val}</li>
+                )}
+            </ul>
+        </div>
     )
 }
 Actor.propTypes = {
