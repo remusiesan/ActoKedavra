@@ -1,23 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import "@fontsource/poppins";
 
 import Header from "./components/Header";
-import Actor from "./components/Actor";
+import Container from "./components/Container";
+import Button from "./components/Button";
+import ListOfActors from "./components/ListOfActors";
+import AddEditActor from "./components/AddEditActor";
 import Footer from "./components/Footer";
 
-function App() {
-  const actor = {
-    name: 'Leonardo Dicaprio',
-    score: 10,
-    hobbies: 'Music and dancing naked in the rain',
-    description: 'He is a good guy with a thick mustahe.'
+function App(props) {
+  const listOfActors = [
+    {
+      name: 'Leonardo Dicaprio',
+      score: 10,
+      hobbies: 'Music and dancing naked in the rain',
+      description: 'He is a good guy with a thick mustahe.'
+    },
+    {
+      name: 'Leonardo Dicaprio',
+      score: 11,
+      hobbies: 'Music and dancing naked in the rain',
+      description: 'He is a good guy with a thick mustahe.'
+    },
+    {
+      name: 'Leonardo Dicaprio',
+      score: 12,
+      hobbies: 'Music and dancing naked in the rain',
+      description: 'He is a good guy with a thick mustahe.'
+    }
+  ]
+
+  const [showAddNewActor, setShowAddNewActor] = useState(false);
+  const modalAddNewActor = () => {
+    setShowAddNewActor(true);
+  }
+  const hideAddNewActor = (status) => {
+    setShowAddNewActor(status);
   }
 
   return (
     <div className="App">
-      <Header />
-      <Actor actor={typeof actor === 'object' ? actor : {}} />
+      
+      <Header zindex={showAddNewActor}/>
+      <Container>
+        <Button class="btn_sort" title="Sort" />
+        <Button class="btn_select" title="Select" />
+        <ListOfActors listOfActors={listOfActors}/>
+        <Button class="btn_add_new_actor" title="Add new actor" onClick={modalAddNewActor} />
+      </Container>
       <Footer />
+
+      <AddEditActor show={showAddNewActor} hidePopup={hideAddNewActor}/>
     </div>
   );
 }
