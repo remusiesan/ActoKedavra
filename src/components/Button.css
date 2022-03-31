@@ -47,7 +47,8 @@
     position: static;
     width: 335px;
     height: 56px;
-    left: calc(50% - 335px/2);
+    /* left: calc(50% - 335px/2); */
+    float: left;
     bottom: 88px;
     background: #6308F7;
     border-radius: 12px;

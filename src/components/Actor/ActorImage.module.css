@@ -1,0 +1,15 @@
+.actor_image{
+    position: static;
+    width: 162px;
+    height: 173px;
+    left: 0px;
+    top: 0px;
+    border-radius: 10px 10px 0px 0px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+    /*  */
+    float: left;
+    display: inline;
+}

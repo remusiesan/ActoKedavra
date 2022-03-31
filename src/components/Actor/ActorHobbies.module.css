@@ -1,0 +1,46 @@
+.actor_hobbies{
+    display: inline-block;
+    float: left;
+    /* display: table; */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    position: static;
+    width: 140px;
+    height: 46px;
+    left: 10px;
+    top: 52px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 8px 0px;
+    margin-top: 16px;
+}
+
+.actor_hobbies__item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 8px;
+    position: static;
+    width: auto;
+    height: 21px;
+    left: 0px;
+    top: 0px;
+    background: #E5EBFE;
+    border-radius: 8px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 120%;
+    text-align: center;
+    color: #032596;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
