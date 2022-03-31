@@ -34,13 +34,9 @@ const Actor = (props) => {
                     </div>
 
                     <div className={classes.read_more_and_edit}>
-                        <div className={classes.read__more}>
-                            <Button class="btn_read_more" title="Read more"/>
-                        </div>
-
-                        <div className={classes.edit}>
-                            <Button class="btn_edit" title="Edit"/>
-                        </div>
+                        <Button class="btn_read_more" title="Read more"/>
+                        <br/>
+                        <Button class="btn_edit" title="Edit"/>
                     </div>
                 </div>
             </div>

@@ -43,10 +43,23 @@ function App(props) {
       
       <Header zindex={showAddNewActor}/>
       <Container>
+        <h2>My Cool Buttons</h2>
+        <Button class="remove_actor"/>
+        <br/><br/>
+        <Button class="btn_read_more" onClick="onClick" title="Read more"/>
+        <br/><br/>
+        <Button class="btn_edit" title="Edit"/>
+        <br/><br/>
         <Button class="btn_sort" title="Sort" />
+        <br/><br/>
+        <Button class="btn_select" title="Select" />
+        <br/><br/>
+        <Button class="btn_add_new_actor" title="Add new actor" onClick={modalAddNewActor} />
+        
+        {/* <Button class="btn_sort" title="Sort" />
         <Button class="btn_select" title="Select" />
         <ListOfActors listOfActors={listOfActors}/>
-        <Button class="btn_add_new_actor" title="Add new actor" onClick={modalAddNewActor} />
+        <Button class="btn_add_new_actor" title="Add new actor" onClick={modalAddNewActor} /> */}
       </Container>
       <Footer />
 

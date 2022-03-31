@@ -1,9 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import './Button.css';
 
 const Button = (props) => {
+    const [title, setTitle] = useState(props.title);
+    const [classname, setClassname] = useState(props.class);
+    const onClick = () => {
+        if(title === "Read more"){
+            setTitle("Read less")
+            setClassname('btn_read_less')
+        } 
+        if(title === "Read less"){
+            setTitle("Read more")
+            setClassname('btn_read_more')
+        }
+    }
     return(
-        <button className={props.class} onClick={props.onClick}>{props.title}</button>
+        <button className={classname} onClick={onClick}>{title}</button>
     )
 }
 
