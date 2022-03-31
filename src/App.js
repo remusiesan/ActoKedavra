@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "@fontsource/poppins";
 
-import Header from "./components/Header";
-import Container from "./components/Container";
-import Button from "./components/Button";
+import Header from "./components/UI/Header";
+import Container from "./components/UI/Container";
+import Button from "./components/UI/Button";
 import ActorCard from "./components/Actor/ActorCard";
 import ActorImage from "./components/Actor/ActorImage";
 import ActorNameOccupation from "./components/Actor/ActorNameOccupation";
@@ -11,7 +11,7 @@ import ActorHobbies from "./components/Actor/ActorHobbies";
 import ActorDescription from "./components/Actor/ActorDescription";
 import ListOfActors from "./components/ListOfActors";
 import AddEditActor from "./components/AddEditActor";
-import Footer from "./components/Footer";
+import Footer from "./components/UI/Footer";
 
 function App(props) {
   const listOfActors = [
@@ -72,6 +72,10 @@ function App(props) {
           <ActorNameOccupation name="Leonardo Dicaprio" occupation="Actor & Writer" numberOfLikes="44"/>
           <ActorHobbies hobbies={hobbies}/>
           <ActorDescription description="It's easy to believe Leonardo DiCaprio really is the king..."/>
+        </div>
+
+        <div className="presentationBox">
+          <h2>Modals</h2>
         </div>
         {/* <Button class="btn_sort" title="Sort" />
         <Button class="btn_select" title="Select" />

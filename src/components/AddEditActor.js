@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Container from "./Container";
+import Container from "./UI/Container";
 import './AddEditActor.css';
 
-import Button from "./Button";
+import Button from "./UI/Button";
 
 const AddEditActor = (props) => {
     const hideModalHandler = () => {
