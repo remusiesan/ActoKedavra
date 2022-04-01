@@ -89,14 +89,3 @@
     float: left;
     display: inline;
 }
-
-.alert_close_image{
-    /* position: absolute; */
-    width: 24px;
-    right: 24px;
-    top: 33.33%;
-    bottom: 33.33%;
-    float: right;
-    cursor: pointer;
-    /* opacity: 0.5; */
-}

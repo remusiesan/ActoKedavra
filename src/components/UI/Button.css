@@ -331,3 +331,28 @@
 .btn_delete.set_margin_top{
     margin-top: 100px;
 }
+
+.alert_close_success, .alert_close_warning, .alert_close_danger{
+    /* position: absolute; */
+    width: 24px;
+    right: 24px;
+    top: 33.33%;
+    bottom: 33.33%;
+    float: right;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    /* opacity: 0.5; */
+}
+
+.alert_close_success::after{
+    content: url(../../images/alert_close_success.png);
+}
+
+.alert_close_warning::after{
+    content: url(../../images/alert_close_warning.png);
+}
+
+.alert_close_danger::after{
+    content: url(../../images/alert_close_danger.png);
+}
