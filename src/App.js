@@ -12,6 +12,7 @@ import ActorDescription from "./components/Actor/ActorDescription";
 import Modal from "./components/UI/Modal";
 import SelectAll from "./components/UI/SelectAll";
 import EmptyState from "./components/UI/EmptyState";
+import Alert from "./components/UI/Alert";
 import AddEditActorForm from "./components/Forms/AddEditActorForm";
 import Footer from "./components/UI/Footer";
 
@@ -82,6 +83,15 @@ function App(props) {
         <div className="presentationBoxModal" style={{minHeight: '400px'}}>
           <h2>-- Empty State</h2>
           <EmptyState /> 
+        </div>
+
+        <div className="presentationBoxModal" style={{minHeight: '400px'}}>
+          <h2>-- Alert</h2>
+          <Alert type="success_notification" message="Actor added successfully."/> 
+          <br/>
+          <Alert type="warning_notification" message="You can add max. 7 actors."/>
+          <br/>
+          <Alert type="danger_notification" message="Your changes were not saved."/>
         </div>
       </Container>
       <Footer />
