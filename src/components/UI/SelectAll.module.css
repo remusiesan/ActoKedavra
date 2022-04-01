@@ -1,0 +1,46 @@
+.select_all_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 335px;
+    height: 32px;
+    left: 20px;
+    top: 128px;
+    border-radius: 10px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.select_all_text{
+    position: static;
+    width: auto;
+    height: 22px;
+    left: 0px;
+    top: 5px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.75px;
+    color: #4E4B66;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.select_all_image{
+    position: relative;
+    width: 375px;
+    height: 2029px;
+    background: #F7F7FC;
+}

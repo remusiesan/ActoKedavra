@@ -9,40 +9,18 @@ import ActorImage from "./components/Actor/ActorImage";
 import ActorNameOccupation from "./components/Actor/ActorNameOccupation";
 import ActorHobbies from "./components/Actor/ActorHobbies";
 import ActorDescription from "./components/Actor/ActorDescription";
-import ListOfActors from "./components/ListOfActors";
-import AddEditActor from "./components/AddEditActor";
+import Modal from "./components/UI/Modal";
+import SelectAll from "./components/UI/SelectAll";
+import EmptyState from "./components/UI/EmptyState";
+import AddEditActorForm from "./components/Forms/AddEditActorForm";
 import Footer from "./components/UI/Footer";
 
 function App(props) {
-  const listOfActors = [
-    {
-      name: 'Leonardo Dicaprio',
-      score: 10,
-      hobbies: 'Music and dancing naked in the rain',
-      description: 'He is a good guy with a thick mustahe.'
-    },
-    {
-      name: 'Leonardo Dicaprio',
-      score: 11,
-      hobbies: 'Music and dancing naked in the rain',
-      description: 'He is a good guy with a thick mustahe.'
-    },
-    {
-      name: 'Leonardo Dicaprio',
-      score: 12,
-      hobbies: 'Music and dancing naked in the rain',
-      description: 'He is a good guy with a thick mustahe.'
-    }
-  ]
-
   const hobbies = ['Traveling', 'Reading', 'Crossword puzzles'];
 
   const [showAddNewActor, setShowAddNewActor] = useState(false);
   const modalAddNewActor = () => {
     setShowAddNewActor(true);
-  }
-  const hideAddNewActor = (status) => {
-    setShowAddNewActor(status);
   }
 
   return (
@@ -50,8 +28,8 @@ function App(props) {
       
       <Header zindex={showAddNewActor}/>
       <Container>
-        <div className="presentationBox">
-          <h2>My Cool Buttons</h2>
+        <div className="presentationBoxButton">
+          <h2>-- My Cool Buttons</h2>
           <Button class="remove_actor"/>
           <br/><br/>
           <Button class="btn_read_more" onClick="onClick" title="Read more"/>
@@ -63,10 +41,14 @@ function App(props) {
           <Button class="btn_select" title="Select" />
           <br/><br/>
           <Button class="btn_add_new_actor" title="Add new actor" onClick={modalAddNewActor} />
+          <br/><br/>
+          <Button class="btn_sort_ascending" title="Ascending" />
+          <Button class="btn_sort_descending" title="Descending" />
+          <Button class="btn_delete" title="Delete" />
         </div>  
       
-        <div className="presentationBox">
-          <h2>Actor Components</h2>
+        <div className="presentationBoxActor">
+          <h2>-- Actor Components</h2>
           <ActorCard />
           <ActorImage image="/images/leonardo.png"/>
           <ActorNameOccupation name="Leonardo Dicaprio" occupation="Actor & Writer" numberOfLikes="44"/>
@@ -74,17 +56,35 @@ function App(props) {
           <ActorDescription description="It's easy to believe Leonardo DiCaprio really is the king..."/>
         </div>
 
-        <div className="presentationBox">
-          <h2>Modals</h2>
+        <div className="presentationBoxModal">
+          <h2>-- Modals - Add new actor</h2>
+          <Modal title="Add new actor" showCloseButton={true}>
+            <AddEditActorForm />
+          </Modal>
         </div>
-        {/* <Button class="btn_sort" title="Sort" />
-        <Button class="btn_select" title="Select" />
-        <ListOfActors listOfActors={listOfActors}/>
-        <Button class="btn_add_new_actor" title="Add new actor" onClick={modalAddNewActor} /> */}
+        
+        <div className="presentationBoxModal" style={{minHeight: '360px'}}>
+          <h2>-- Modals - Select type of sort</h2>
+          <Modal title="Select type of sort" showCloseButton={false}> 
+            <Button class="btn_sort_ascending" title="Ascending" />
+            <Button class="btn_sort_descending" title="Descending" />
+          </Modal>
+        </div>
+
+        <div className="presentationBoxModal" style={{minHeight: '360px'}}>
+          <h2>-- Modals - Selected Functionality</h2>
+          <Modal title="1 Selected" showCloseButton={true}> 
+            <SelectAll />
+            <Button class="btn_delete set_margin_top" title="Delete" />
+          </Modal>
+        </div>
+
+        <div className="presentationBoxModal" style={{minHeight: '400px'}}>
+          <h2>-- Empty State</h2>
+          <EmptyState /> 
+        </div>
       </Container>
       <Footer />
-
-      {/* <AddEditActor show={showAddNewActor} hidePopup={hideAddNewActor}/> */}
     </div>
   );
 }
