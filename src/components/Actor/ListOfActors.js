@@ -44,10 +44,10 @@ const ListOfActors = (props) => {
                 ))}
             </div>
         );
-    } else {
+    } 
+    return (
         <EmptyState />
-    }
-    return null;
+    )
 }
 
 export default ListOfActors;
