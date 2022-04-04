@@ -1,19 +1,28 @@
 {
-  "posts": [
+  "actors": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "picture": "/images/leonardo.png",
+      "name": "Leonardo Dicaprio",
+      "occupation": "Actor & Writer",
+      "score": 44,
+      "hobbies": ["Traveling", "Reading", "Crossword puzzles"],
+      "short_description": "It's easy to believe Leonardo DiCaprio really is the 'king ...”"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "picture": "/images/angelina.png",
+      "name": "Angelina Jolie",
+      "occupation": "Actress & Producer",
+      "score": 56,
+      "hobbies": ["Dancing", "Modeling", "Traveling", "Blogging"],
+      "short_description": "Angelina Jolie is an Academy Award-winning ..."
+    },
+    {
+      "picture": "/images/jennifer.png",
+      "name": "Jennifer Aniston",
+      "occupation": "Actress & Director",
+      "score": 45,
+      "hobbies": ["Cooking", "Badminton", "Photography"],
+      "short_description": "Jennifer Aniston was born in Sherman Oaks, California, t..."
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

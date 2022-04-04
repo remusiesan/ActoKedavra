@@ -32,7 +32,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     position: static;
-    /* float: right; */
+    float: right;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -40,6 +40,11 @@
     line-height: 120%;
     cursor: pointer;
 }
+
+.presentationBoxButton .btn_select{
+    float: left;
+}
+ 
 .btn_add_new_actor{
     display: flex;
     flex-direction: row;
@@ -49,7 +54,7 @@
     position: static;
     width: 335px;
     height: 56px;
-    /* left: calc(50% - 335px/2); */
+    left: calc(50% - 335px/2);
     float: left;
     bottom: 88px;
     background: #6308F7;
@@ -92,6 +97,7 @@
     background-color: transparent;
     padding: 0px;
     cursor: pointer;
+    margin-left: 2px;
 }
 
 .btn_read_more::after{
@@ -128,6 +134,7 @@
     background-color: transparent;
     padding: 0px;
     cursor: pointer;
+    padding-left: 2px;
 }
 
 .btn_read_less::after{
@@ -159,7 +166,7 @@
     flex: none;
     order: 0;
     flex-grow: 0;
-    /* margin: 0px 4px; */
+    margin: 10px 10px;
     border: 1px solid #6308F7;
     border-radius: 8px;
     background: transparent;
@@ -188,10 +195,10 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    /* left: 140px;
-    top: -15px; */
+    left: 125px;
+    /* top: -15px; */
     content: url(../../images/remove_actor.png);
-    /* z-index: 100; */
+    z-index: 100;
     border: none;
     background-color: transparent;
     cursor: pointer;

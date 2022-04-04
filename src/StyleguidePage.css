@@ -1,0 +1,9 @@
+.EmptyState_custom div{
+    position: inherit;
+    top: 263px;
+    transform: none;
+}
+
+.presentationBoxButton .remove_actor{
+    left: auto;
+}

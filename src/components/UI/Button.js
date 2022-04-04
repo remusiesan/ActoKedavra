@@ -8,10 +8,12 @@ const Button = (props) => {
         if(title === "Read more"){
             setTitle("Read less")
             setClassname('btn_read_less')
+            props.showMore(true);
         } 
         if(title === "Read less"){
             setTitle("Read more")
             setClassname('btn_read_more')
+            props.showMore(false);
         }
     }
     return(

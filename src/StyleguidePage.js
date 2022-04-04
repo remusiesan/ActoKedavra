@@ -16,6 +16,8 @@ import Alert from "./components/UI/Alert";
 import AddEditActorForm from "./components/Forms/AddEditActorForm";
 import Footer from "./components/UI/Footer";
 
+import './StyleguidePage.css';
+
 function StyleguidePage(props) {
   const hobbies = ['Traveling', 'Reading', 'Crossword puzzles'];
 
@@ -25,7 +27,7 @@ function StyleguidePage(props) {
   }
 
   return (
-    <div className="App">
+    <div className="StyleguidePage">
       
       <Header zindex={showAddNewActor}/>
       <Container>
@@ -80,7 +82,7 @@ function StyleguidePage(props) {
           </Modal>
         </div>
 
-        <div className="presentationBoxModal" style={{minHeight: '400px'}}>
+        <div className="presentationBoxModal EmptyState_custom" style={{minHeight: '400px'}}>
           <h2>-- Empty State</h2>
           <EmptyState /> 
         </div>

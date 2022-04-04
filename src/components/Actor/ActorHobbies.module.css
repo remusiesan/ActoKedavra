@@ -13,8 +13,10 @@
     flex: none;
     order: 1;
     flex-grow: 0;
-    margin: 8px 0px;
-    margin-top: 16px;
+    margin-top: -8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
 }
 
 .actor_hobbies__item{
