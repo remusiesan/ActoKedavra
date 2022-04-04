@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import StyleguidePage from "./StyleguidePage";
 
 import Header from "./components/UI/Header";
@@ -11,17 +11,12 @@ function App(props) {
 
   return (
     <div className="App">
-       <BrowserRouter>
-        <Switch>
-          <Route path="/home">
-            <Header />
-            <Footer />
-          </Route>
-          <Route path="/StyleguidePage">
-            <StyleguidePage />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+       <Router>
+        <Routes>
+          <Route path='/' element={<><Header /> <Footer /></>} />
+          <Route path="/StyleguidePage" element={<StyleguidePage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
