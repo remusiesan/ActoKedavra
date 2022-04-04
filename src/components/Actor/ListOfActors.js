@@ -8,16 +8,19 @@ import ActorImage from "./ActorImage";
 import ActorNameOccupation from "./ActorNameOccupation";
 import ActorHobbies from "./ActorHobbies";
 import ActorDescription from "./ActorDescription";
+import EmptyState from "../UI/EmptyState";
 
 const ListOfActors = (props) => {
     const [actors, setActors] = useState(props.actors)
     const removeActorIdHandler = async(id) => {
-       await fetch(`http://localhost:5000/actors/${id}`,
-       {
-           method: 'DELETE'
-       })
+        //Remove from json server
+        await fetch(`http://localhost:5000/actors/${id}`,
+        {
+            method: 'DELETE'
+        })
 
-       setActors(actors.filter((actor) => actor.id !== id))
+        //Remove from client side
+        setActors(actors.filter((actor) => actor.id !== id))
     }
 
     if(actors.length > 0){
@@ -28,7 +31,7 @@ const ListOfActors = (props) => {
                     <Button class="btn_select" title="Select" />
                 </div>
                 {actors.map((actor, index) => (
-                    <div className={index  % 2 == 0 ? "even_card" : "odd_card"}>
+                    <div key={Math.random().toString()} className={index  % 2 == 0 ? "even_card" : "odd_card"}>
                         <ActorCard>
                             <Button class="remove_actor" actorId={actor.id} removeActorId={removeActorIdHandler}/>
                             <ActorImage image={actor.picture} />
@@ -41,6 +44,8 @@ const ListOfActors = (props) => {
                 ))}
             </div>
         );
+    } else {
+        <EmptyState />
     }
     return null;
 }

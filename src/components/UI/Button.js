@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import './Button.css';
 
 const Button = (props) => {
-    const [idActor, setIndexActor] = useState(props.actorId)
+    // const [idActor, setIndexActor] = useState(0)
     const [classname, setClassname] = useState(props.class)
     const [title, setTitle] = useState(props.title)
     const onClick = () => {
@@ -18,7 +18,8 @@ const Button = (props) => {
         }
 
         if(classname === "remove_actor"){
-            props.removeActorId(idActor);
+            // setIndexActor(props.actorId)
+            props.removeActorId(props.actorId);
         }
     }
     return(
