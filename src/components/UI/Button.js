@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import './Button.css';
 
 const Button = (props) => {
-    const [title, setTitle] = useState(props.title);
-    const [classname, setClassname] = useState(props.class);
+    const [idActor, setIndexActor] = useState(props.actorId)
+    const [classname, setClassname] = useState(props.class)
+    const [title, setTitle] = useState(props.title)
     const onClick = () => {
         if(title === "Read more"){
             setTitle("Read less")
@@ -14,6 +15,10 @@ const Button = (props) => {
             setTitle("Read more")
             setClassname('btn_read_more')
             props.showMore(false);
+        }
+
+        if(classname === "remove_actor"){
+            props.removeActorId(idActor);
         }
     }
     return(

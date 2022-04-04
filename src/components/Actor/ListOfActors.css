@@ -6,6 +6,7 @@
     padding-right: 20px;
     margin-top: 120px;
     margin-bottom: 100px;
+    min-width: 335px;
 }
 
 .list_of_actors_filter_buttons{
@@ -20,4 +21,16 @@
 .odd_card{
     display: inline;
     float: right;
+}
+
+@media screen and (min-width: 600px) {
+    .even_card{
+        display: inline;
+        margin-left: 20px;
+    }
+    
+    .odd_card{
+        display: inline;
+        margin-left: 20px;
+    }
 }
