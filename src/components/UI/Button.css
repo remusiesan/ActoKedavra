@@ -204,6 +204,42 @@
     cursor: pointer;
 }
 
+.choose_actor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 125px;
+    /* top: -15px; */
+    content: url(../../images/empty_choose.png);
+    z-index: 100;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.is_choose_actor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 125px;
+    /* top: -15px; */
+    content: url(../../images/is_choose_actor.png);
+    z-index: 100;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .close_modal{
     content: url(../../images/close_popup.png);
     width: 35px;

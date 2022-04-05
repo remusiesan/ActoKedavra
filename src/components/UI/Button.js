@@ -11,7 +11,8 @@ const Button = (props) => {
             setTitle("Read less")
             setClassname('btn_read_less')
             props.showMore(true);
-        } 
+        }
+
         if(title === "Read less"){
             setTitle("Read more")
             setClassname('btn_read_more')
@@ -28,6 +29,16 @@ const Button = (props) => {
 
         if(classname === "close_modal"){
             props.closeModal(true);
+        }
+
+        if(classname === "btn_select"){
+            props.selectModal(true);
+        }
+
+        if(classname === "choose_actor"){
+            setClassname('is_choose_actor')
+        } else if(classname === "is_choose_actor"){
+            setClassname('choose_actor')
         }
     }
     return(

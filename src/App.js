@@ -7,12 +7,17 @@ import EmptyState from "./components/UI/EmptyState";
 import ListOfActors from "./components/Actor/ListOfActors";
 import Modal from "./components/UI/Modal";
 import AddEditActorForm from "./components/Forms/AddEditActorForm";
+import SelectAll from "./components/UI/SelectAll";
+import Button from "./components/UI/Button";
 import Footer from "./components/UI/Footer";
 
 import "@fontsource/poppins";
 
 function App(props) {
-  const [showAddEditForm, setShowAddEditForm] = useState(false);
+  const [editModal, setEditModal] = useState(false);
+  const [chooseActor, setChooseActor] = useState(false);
+  const [numberOfSelectedActors, setnumberOfSelectedActors] = useState(0);
+  const [selectModal, setSelectModal] = useState(false);
   const [actors, setActors] = useState([])
   const [actor, setActor] = useState([])
   useEffect(() => {
@@ -36,14 +41,28 @@ function App(props) {
     })
     const actor = await res.json()
     setActor(actor)
-    setShowAddEditForm(true)
+    setEditModal(true)
   }
 
-  const showModalHandler = async(result) => {
-    setShowAddEditForm(result)
+  const editModalHandler = async(result) => {
+    setEditModal(result)
     setActors([])
     const actorsFromServer = await fetchActors()
     setActors(actorsFromServer)
+  }
+
+  const selectModalHandler = (result) => {
+    if(result){
+      setSelectModal(true)
+      setChooseActor(true)
+    } else {
+      setSelectModal(false)
+      setChooseActor(false)
+    }
+  }
+
+  const numberOfActorsSelectedHandler = (result) => {
+    setnumberOfSelectedActors(result)
   }
 
   return (
@@ -54,18 +73,26 @@ function App(props) {
             <>
               <Header />
               {actors.length > 0 &&
-                <ListOfActors actors={actors} actorId={getActorForEdit}> 
+                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} chooseActor={chooseActor} numberOfActorsSelected={numberOfActorsSelectedHandler}> 
                 </ListOfActors>
               }
-
               {actors.length === 0 &&
                 <EmptyState />
               }
+
+              {selectModal &&
+                <div className="modalSelectContainer">
+                  <Modal title={numberOfSelectedActors+" Selected"} className="selectModal" showCloseButton={true} selectModal={selectModalHandler}> 
+                    <SelectAll />
+                    <Button class="btn_delete set_margin_top" title="Delete" disabled/>
+                  </Modal>
+                </div>
+              }
               
-              {showAddEditForm && 
+              {editModal && 
                 <div className="modalContainer">
-                  <Modal title="Edit Actor" showCloseButton={true} showModal={showModalHandler}>
-                    <AddEditActorForm actor={actor} buttonText="Update" actionType="updateActor" showModal={showModalHandler}/>
+                  <Modal title="Edit Actor" showCloseButton={true} className="editModal" editModal={editModalHandler}>
+                    <AddEditActorForm actor={actor} buttonText="Update" actionType="updateActor" editModal={editModalHandler} />
                   </Modal>
                 </div>
               }

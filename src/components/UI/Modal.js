@@ -6,9 +6,15 @@ import Button from "./Button";
 const Modal = (props) => {
     const isCloseModal = (result) => {
         if(result){
-            props.showModal(false)
+            if(props.className === "editModal")
+                props.editModal(false)
+            if(props.className === "selectModal")
+                props.selectModal(false)
         } else {
-            props.showModal(true)
+            if(props.className === "editModal")
+                props.editModal(true)
+            if(props.className === "selectModal")
+                props.selectModal(true)
         }
     }
     return(

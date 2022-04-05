@@ -53,3 +53,9 @@ code {
   top: 0px;
   z-index: 1000;
 }
+
+.modalSelectContainer{
+  position: fixed;
+  bottom: 285px;
+  z-index: 1000;
+}

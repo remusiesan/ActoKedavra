@@ -20,15 +20,15 @@ const AddEditActorForm = (props) => {
                     },
                     body: JSON.stringify(props.actor)
                 })
-                props.showModal(false);
+                props.editModal(false);
             } else {
-                props.showModal(false);
+                props.editModal(false);
             }       
         }
     }
 
     const changeMyMindHandler = () => {
-        props.showModal(false);
+        props.editModal(false);
     }
     const [picture, setPicture] = useState(props.actor != undefined && props.actor.picture !== null ? props.actor.picture: "");
     const pictureHandler = (event) => {
