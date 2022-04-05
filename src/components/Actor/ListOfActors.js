@@ -14,13 +14,17 @@ const ListOfActors = (props) => {
     const [actors, setActors] = useState(props.actors)
     const removeActorIdHandler = async(id) => {
         //Remove from json server
-        await fetch(`http://localhost:5000/actors/${id}`,
-        {
-            method: 'DELETE'
-        })
+        // await fetch(`http://localhost:5000/actors/${id}`,
+        // {
+        //     method: 'DELETE'
+        // })
 
         //Remove from client side
         setActors(actors.filter((actor) => actor.id !== id))
+    }
+
+    const editActorIdHandler = async(id) => {
+        props.actorId(id)
     }
 
     if(actors.length > 0){
@@ -38,7 +42,7 @@ const ListOfActors = (props) => {
                             <ActorNameOccupation name={actor.name} occupation={actor.occupation} numberOfLikes={actor.score} />
                             <ActorHobbies hobbies={actor.hobbies}/>
                             <ActorDescription description={actor.short_description} />
-                            <Button class="btn_edit" title="Edit"/>
+                            <Button class="btn_edit" actorId={actor.id} title="Edit" editActorId={editActorIdHandler}/>
                         </ActorCard>
                     </div>
                 ))}

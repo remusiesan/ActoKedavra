@@ -5,13 +5,16 @@ import StyleguidePage from "./StyleguidePage";
 import Header from "./components/UI/Header";
 import EmptyState from "./components/UI/EmptyState";
 import ListOfActors from "./components/Actor/ListOfActors";
+import Modal from "./components/UI/Modal";
+import AddEditActorForm from "./components/Forms/AddEditActorForm";
 import Footer from "./components/UI/Footer";
 
 import "@fontsource/poppins";
 
 function App(props) {
-  const [emptyList, setEmptyList] = useState(true);
+  const [showAddEditForm, setShowAddEditForm] = useState(false);
   const [actors, setActors] = useState([])
+  const [actor, setActor] = useState([])
   useEffect(() => {
     const getActors = async () => {
       const actorsFromServer = await fetchActors()
@@ -26,6 +29,23 @@ function App(props) {
     return data;
   }
 
+  const getActorForEdit = async(actorId) => {
+    const res = await fetch(`http://localhost:5000/actors/${actorId}`,
+    {
+        method: 'GET'
+    })
+    const actor = await res.json()
+    setActor(actor)
+    setShowAddEditForm(true)
+  }
+
+  const showModalHandler = async(result) => {
+    setShowAddEditForm(result)
+    setActors([])
+    const actorsFromServer = await fetchActors()
+    setActors(actorsFromServer)
+  }
+
   return (
     <div className="App">
        <Router>
@@ -34,13 +54,20 @@ function App(props) {
             <>
               <Header />
               {actors.length > 0 &&
-                <ListOfActors actors={actors}>
-                  
+                <ListOfActors actors={actors} actorId={getActorForEdit}> 
                 </ListOfActors>
               }
 
               {actors.length === 0 &&
                 <EmptyState />
+              }
+              
+              {showAddEditForm && 
+                <div className="modalContainer">
+                  <Modal title="Edit Actor" showCloseButton={true} showModal={showModalHandler}>
+                    <AddEditActorForm actor={actor} buttonText="Update" actionType="updateActor" showModal={showModalHandler}/>
+                  </Modal>
+                </div>
               }
               <Footer />
             </>

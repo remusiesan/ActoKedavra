@@ -6,6 +6,7 @@ const Button = (props) => {
     const [classname, setClassname] = useState(props.class)
     const [title, setTitle] = useState(props.title)
     const onClick = () => {
+        //Replace if with switch
         if(title === "Read more"){
             setTitle("Read less")
             setClassname('btn_read_less')
@@ -18,8 +19,15 @@ const Button = (props) => {
         }
 
         if(classname === "remove_actor"){
-            // setIndexActor(props.actorId)
             props.removeActorId(props.actorId);
+        }
+
+        if(classname === "btn_edit"){
+            props.editActorId(props.actorId);
+        }
+
+        if(classname === "close_modal"){
+            props.closeModal(true);
         }
     }
     return(

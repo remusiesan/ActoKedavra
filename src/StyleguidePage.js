@@ -62,7 +62,7 @@ function StyleguidePage(props) {
         <div className="presentationBoxModal">
           <h2>-- Modals - Add new actor</h2>
           <Modal title="Add new actor" showCloseButton={true}>
-            <AddEditActorForm />
+            <AddEditActorForm buttonText="Add" actionType="updateActor"/>
           </Modal>
         </div>
         

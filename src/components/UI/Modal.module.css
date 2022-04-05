@@ -16,9 +16,10 @@
     position: absolute;
     width: 375px;
     height:auto;
-    max-height: 790px;
+    max-height: 100vh;
     left: 0px;
     top: 0px;
+    overflow: auto;
 }
 
 .container_content{
@@ -29,9 +30,9 @@
     /* position: absolute; */
     width: 375px;
     height:auto;
-    max-height: 790px;
+    max-height: 865px;
     left: calc(50% - 375px/2);
-    top: calc(50% - 790px/2 + 0px);
+    top: calc(50% - 865px/2 + 0px);
     background: #FFFFFF;
     border-radius: 24px 24px 0px 0px;
 }
