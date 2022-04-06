@@ -31,6 +31,10 @@ const ListOfActors = (props) => {
         props.selectModal(true);
     }
 
+    const isChoosenHandler = (result) => {
+        props.numberOfSelectedActors(localStorage.getItem("numberOfSelectedActors"))
+    }
+
     if(actors.length > 0){
         return (
             <div className="list_of_actors">
@@ -41,7 +45,10 @@ const ListOfActors = (props) => {
                 {actors.map((actor, index) => (
                     <div key={Math.random().toString()} className={index  % 2 == 0 ? "even_card" : "odd_card"}>
                         <ActorCard>
-                            {props.chooseActor ? <Button class="choose_actor" actorId={actor.id} /> : <Button class="remove_actor" actorId={actor.id} removeActorId={removeActorIdHandler}/>}
+                            {(!props.chooseActor && !props.selectAll) && <Button class="remove_actor" actorId={actor.id} removeActorId={removeActorIdHandler} />}
+                            {(props.chooseActor && !props.selectAll) && <Button class="choose_actor" actorId={actor.id} isChoosen={isChoosenHandler} />}
+                            {(props.chooseActor && props.selectAll) && <Button class="is_choose_actor" actorId={actor.id} isChoosen={isChoosenHandler} />}
+            
                             <ActorImage image={actor.picture} />
                             <ActorNameOccupation name={actor.name} occupation={actor.occupation} numberOfLikes={actor.score} />
                             <ActorHobbies hobbies={actor.hobbies}/>

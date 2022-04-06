@@ -362,6 +362,39 @@
     letter-spacing: 0.75px;
     color: #6308F7;
     cursor: pointer;
+    opacity: 0.2;
+}
+
+.btn_delete_opacity{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    position: static;
+    width: 335px;
+    height: 56px;
+    left: 0px;
+    top: 0px;
+    border: 2px solid #6308F7;
+    box-sizing: border-box;
+    border-radius: 12px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 24px 0px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.75px;
+    color: #6308F7;
+    cursor: pointer;
+    opacity: 1;
 }
 
 .btn_delete::before{
@@ -373,6 +406,14 @@
 
 .btn_delete.set_margin_top{
     margin-top: 100px;
+}
+
+.btn_delete_opacity.set_margin_top{
+    margin-top: 100px;
+}
+
+.btn_delete.opacity{
+    opacity: 1;
 }
 
 .alert_close_success, .alert_close_warning, .alert_close_danger{
@@ -398,4 +439,36 @@
 
 .alert_close_danger::after{
     content: url(../../images/alert_close_danger.png);
+}
+
+.selectAll{
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    position: initial;
+    width: 35px;
+    height: 35px;
+    left: 125px;
+    content: url(../../images/selectall.png);
+    z-index: 100;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    float: right;
+}
+
+.selectAllSelected{
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    position: initial;
+    width: 35px;
+    height: 35px;
+    left: 125px;
+    content: url(../../images/selectall_selected.png);
+    z-index: 100;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    float: right;
 }

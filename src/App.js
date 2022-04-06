@@ -16,7 +16,7 @@ import "@fontsource/poppins";
 function App(props) {
   const [editModal, setEditModal] = useState(false);
   const [chooseActor, setChooseActor] = useState(false);
-  const [numberOfSelectedActors, setnumberOfSelectedActors] = useState(0);
+  const [selectAll, setSelectAll] = useState(false)
   const [selectModal, setSelectModal] = useState(false);
   const [actors, setActors] = useState([])
   const [actor, setActor] = useState([])
@@ -53,16 +53,64 @@ function App(props) {
 
   const selectModalHandler = (result) => {
     if(result){
+      localStorage.setItem("numberOfSelectedActors", 0);
+      localStorage.setItem("actorsToDelete", []);
       setSelectModal(true)
       setChooseActor(true)
     } else {
       setSelectModal(false)
       setChooseActor(false)
+      setSelectAll(false)
     }
   }
 
-  const numberOfActorsSelectedHandler = (result) => {
-    setnumberOfSelectedActors(result)
+  const numberOfSelectedActorsHandler = (result) => {
+    if(document.getElementsByClassName("modalSelectContainer").length)
+      document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("h2")[0].textContent = result+" Selected"
+  }
+
+  const selectedAllHandler = (result) => {
+    if(result){
+      let arrActorsId = []
+      actors.forEach(actor => {
+        arrActorsId.push(actor.id)
+      });
+      localStorage.setItem("actorsToDelete", arrActorsId);
+      document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].style.opacity=1
+      //document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].disabled=true
+      setSelectAll(true)
+    } else {
+      document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].style.opacity=0.2
+      //document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].disabled=false
+      setSelectAll(false)
+      localStorage.setItem("actorsToDelete", []);
+    }
+
+  }
+
+  const deleteActorById = async(id) => {
+    console.log('The actor was deleted!')
+    await fetch(`http://localhost:5000/actors/${id}`,
+    {
+        method: 'DELETE'
+    })
+  }
+  const deleteActorsHandler = async(result) => {
+    if(result){
+      let arrActorIds = localStorage.getItem("actorsToDelete").split(',')
+      //console.log(actors)
+      const newListOfActors = []
+      arrActorIds.forEach(id => {
+        var result  = actors.filter(function(actor){return actor.id === parseInt(id)} );
+        if(result.length > 0){
+          setTimeout(() => {
+            deleteActorById(result[0].id)
+            setActors(actors.splice(actors.findIndex(({id}) => id == parseInt(result[0].id)), 1))
+          }, 500);
+        }
+      })
+      setSelectModal(false)
+    }
   }
 
   return (
@@ -73,18 +121,19 @@ function App(props) {
             <>
               <Header />
               {actors.length > 0 &&
-                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} chooseActor={chooseActor} numberOfActorsSelected={numberOfActorsSelectedHandler}> 
+                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler}> 
                 </ListOfActors>
               }
+
               {actors.length === 0 &&
                 <EmptyState />
               }
 
               {selectModal &&
                 <div className="modalSelectContainer">
-                  <Modal title={numberOfSelectedActors+" Selected"} className="selectModal" showCloseButton={true} selectModal={selectModalHandler}> 
-                    <SelectAll />
-                    <Button class="btn_delete set_margin_top" title="Delete" disabled/>
+                  <Modal title={"0 Selected"} className="selectModal" showCloseButton={true} selectModal={selectModalHandler}> 
+                    <SelectAll selectedAll={selectedAllHandler}/>
+                    <Button class="btn_delete set_margin_top" title="Delete" deleteActors={deleteActorsHandler}/>
                   </Modal>
                 </div>
               }

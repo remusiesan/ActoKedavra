@@ -9,7 +9,7 @@ const AddEditActorForm = (props) => {
         event.preventDefault();
         setApplyRequired(true);
         
-        if(name != "" && occupation != "" && hobbies != "" && description != ""){
+        if(name !== "" && occupation !== "" && hobbies !== "" && description !== ""){
             if(props.actionType === "updateActor"){
                 await fetch(`http://localhost:5000/actors/${props.actor.id}`,
                 {
@@ -30,31 +30,31 @@ const AddEditActorForm = (props) => {
     const changeMyMindHandler = () => {
         props.editModal(false);
     }
-    const [picture, setPicture] = useState(props.actor != undefined && props.actor.picture !== null ? props.actor.picture: "");
+    const [picture, setPicture] = useState(props.actor !== undefined && props.actor.picture !== null ? props.actor.picture: "");
     const pictureHandler = (event) => {
         setPicture(event.target.value)
         props.actor.picture = event.target.value
     }
 
-    const [name, setName] = useState(props.actor != undefined && props.actor.name !== undefined ? props.actor.name: "");
+    const [name, setName] = useState(props.actor !== undefined && props.actor.name !== undefined ? props.actor.name: "");
     const nameHandler = (event) => {
         setName(event.target.value)
         props.actor.name = event.target.value
     }
 
-    const [occupation, setOccupation] = useState(props.actor != undefined && props.actor.occupation !== undefined ? props.actor.occupation: "");
+    const [occupation, setOccupation] = useState(props.actor !== undefined && props.actor.occupation !== undefined ? props.actor.occupation: "");
     const occupationHandler = (event) => {
         setOccupation(event.target.value);
         props.actor.occupation = event.target.value
     }
 
-    const [hobbies, setHobbies] = useState(props.actor != undefined && props.actor.hobbies !== undefined ? props.actor.hobbies: "");
+    const [hobbies, setHobbies] = useState(props.actor !== undefined && props.actor.hobbies !== undefined ? props.actor.hobbies: "");
     const hobbiesHandler = (event) => {
         setHobbies(event.target.value);
         props.actor.hobbies = event.target.value.split(',')
     }
 
-    const [description, setDescription] = useState(props.actor != undefined && props.actor.short_description !== undefined ? props.actor.short_description: "");;
+    const [description, setDescription] = useState(props.actor !== undefined && props.actor.short_description !== undefined ? props.actor.short_description: "");;
     const [remainedCharacters, setRemainedCharacters] = useState(props.actor != undefined && props.actor.short_description !== undefined ? 180-props.actor.short_description.length : "180");
     const numberOfCharactersHandler = (event) => {
         setRemainedCharacters(180-event.target.value.length);

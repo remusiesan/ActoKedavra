@@ -37,8 +37,42 @@ const Button = (props) => {
 
         if(classname === "choose_actor"){
             setClassname('is_choose_actor')
+            localStorage.setItem("numberOfSelectedActors", parseInt(localStorage.getItem("numberOfSelectedActors")) + 1);
+            props.isChoosen(true);
+            let arrActorsId = []
+            if(localStorage.getItem("actorsToDelete") !== '')
+                arrActorsId = localStorage.getItem("actorsToDelete").split(',')
+            arrActorsId.push(props.actorId)
+            localStorage.setItem("actorsToDelete",arrActorsId)
+            document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].style.opacity=1
         } else if(classname === "is_choose_actor"){
             setClassname('choose_actor')
+            if(parseInt(localStorage.getItem("numberOfSelectedActors")) > 0){
+                localStorage.setItem("numberOfSelectedActors", parseInt(localStorage.getItem("numberOfSelectedActors")) + -1);
+            }
+            props.isChoosen(false)
+            let arrActorsId = []
+            localStorage.getItem("actorsToDelete").split(',').forEach(id => {
+                if(parseInt(id) !== props.actorId)
+                    arrActorsId.push(id)
+            })
+            localStorage.setItem("actorsToDelete", arrActorsId)
+        }
+
+        if(classname === "selectAll"){
+            setClassname('selectAllSelected')
+            props.selectedAll(true)
+            localStorage.setItem("numberOfSelectedActors", document.getElementsByClassName("list_of_actors")[0].getElementsByClassName('even_card').length + document.getElementsByClassName("list_of_actors")[0].getElementsByClassName('odd_card').length)
+            document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("h2")[0].textContent = localStorage.getItem("numberOfSelectedActors")+" Selected"
+        } else if(classname === "selectAllSelected"){
+            setClassname('selectAll')
+            props.selectedAll(false)
+            localStorage.setItem("numberOfSelectedActors", 0);
+            document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("h2")[0].textContent = localStorage.getItem("numberOfSelectedActors")+" Selected"
+        }
+
+        if(classname === "btn_delete set_margin_top"){
+            props.deleteActors(true)
         }
     }
     return(
