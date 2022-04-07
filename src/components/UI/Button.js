@@ -35,6 +35,10 @@ const Button = (props) => {
             props.selectModal(true);
         }
 
+        if(classname === "btn_sort"){
+            props.sortModal(true);
+        }
+
         if(classname === "choose_actor"){
             setClassname('is_choose_actor')
             localStorage.setItem("numberOfSelectedActors", parseInt(localStorage.getItem("numberOfSelectedActors")) + 1);
@@ -73,6 +77,14 @@ const Button = (props) => {
 
         if(classname === "btn_delete set_margin_top"){
             props.deleteActors(true)
+        }
+
+        if(classname === "btn_sort_ascending"){
+            props.sortAscending(true)
+        }
+
+        if(classname === "btn_sort_descending"){
+            props.sortDescending(true)
         }
     }
     return(

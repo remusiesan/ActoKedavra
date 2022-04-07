@@ -18,6 +18,7 @@ function App(props) {
   const [chooseActor, setChooseActor] = useState(false);
   const [selectAll, setSelectAll] = useState(false)
   const [selectModal, setSelectModal] = useState(false);
+  const [sortModal, setSortModal] = useState(false);
   const [actors, setActors] = useState([])
   const [actor, setActor] = useState([])
   useEffect(() => {
@@ -59,8 +60,17 @@ function App(props) {
       setChooseActor(true)
     } else {
       setSelectModal(false)
+      setSortModal(false)
       setChooseActor(false)
       setSelectAll(false)
+    }
+  }
+
+  const sortModalHandler = (result) => {
+    if(result){
+      setSortModal(true)
+    } else {
+      setSortModal(false)
     }
   }
 
@@ -112,6 +122,16 @@ function App(props) {
       setSelectModal(false)
     }
   }
+  
+  const sortAscendingHandler = (result) => {
+    setActors(actors.sort((a, b) => (a.id > b.id) ? 1 : -1))
+    setSortModal(false)
+  }
+
+  const sortDescendingHandler = (result) => {
+    setActors(actors.sort((a, b) => (b.id > a.id) ? 1 : -1))
+    setSortModal(false)
+   }
 
   return (
     <div className="App">
@@ -121,7 +141,7 @@ function App(props) {
             <>
               <Header />
               {actors.length > 0 &&
-                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler}> 
+                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} sortModal={sortModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler}> 
                 </ListOfActors>
               }
 
@@ -134,6 +154,15 @@ function App(props) {
                   <Modal title={"0 Selected"} className="selectModal" showCloseButton={true} selectModal={selectModalHandler}> 
                     <SelectAll selectedAll={selectedAllHandler}/>
                     <Button class="btn_delete set_margin_top" title="Delete" deleteActors={deleteActorsHandler}/>
+                  </Modal>
+                </div>
+              }
+
+              {sortModal &&
+                <div className="modalSelectContainer">
+                  <Modal title="Select type of sort" className="sortModal" showCloseButton={true} sortModal={selectModalHandler}> 
+                    <Button class="btn_sort_ascending" title="Ascending" sortAscending={sortAscendingHandler} />
+                    <Button class="btn_sort_descending" title="Descending" sortDescending={sortDescendingHandler} />
                   </Modal>
                 </div>
               }

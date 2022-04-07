@@ -10,11 +10,15 @@ const Modal = (props) => {
                 props.editModal(false)
             if(props.className === "selectModal")
                 props.selectModal(false)
+            if(props.className === "sortModal")
+                props.sortModal(false)
         } else {
             if(props.className === "editModal")
                 props.editModal(true)
             if(props.className === "selectModal")
                 props.selectModal(true)
+            if(props.className === "sortModal")
+                props.sortModal(true)
         }
     }
     return(

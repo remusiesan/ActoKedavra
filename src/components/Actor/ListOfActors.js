@@ -31,6 +31,10 @@ const ListOfActors = (props) => {
         props.selectModal(true);
     }
 
+    const sortModalHandler = (result) => {
+        props.sortModal(true);
+    }
+
     const isChoosenHandler = (result) => {
         props.numberOfSelectedActors(localStorage.getItem("numberOfSelectedActors"))
     }
@@ -39,7 +43,7 @@ const ListOfActors = (props) => {
         return (
             <div className="list_of_actors">
                 <div className="list_of_actors_filter_buttons">
-                    <Button class="btn_sort" title="Sort" />
+                    <Button class="btn_sort" title="Sort" sortModal={sortModalHandler} />
                     <Button class="btn_select" title="Select" selectModal={selectModalHandler} />
                 </div>
                 {actors.map((actor, index) => (
