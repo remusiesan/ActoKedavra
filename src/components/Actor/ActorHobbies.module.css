@@ -46,3 +46,35 @@
     margin-right: 5px;
     margin-bottom: 5px;
 }
+
+@media screen and (max-width: 375px) {
+
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    .actor_hobbies{
+        width: 95%;
+    }
+
+    .actor_hobbies__item{
+        font-weight: 500;
+        font-size: 16px; 
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .actor_hobbies{
+        width: 95%;
+    }
+
+    .actor_hobbies__item{
+        font-weight: 500;
+        font-size: 21px; 
+        line-height: 120%;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        height: 41px;
+    }
+}

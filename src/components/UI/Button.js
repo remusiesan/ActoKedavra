@@ -86,6 +86,10 @@ const Button = (props) => {
         if(classname === "btn_sort_descending"){
             props.sortDescending(true)
         }
+
+        if(classname === "btn_add_new_actor"){
+            props.addNewActor(true)
+        }
     }
     return(
         <button className={classname} onClick={onClick}>{title}</button>

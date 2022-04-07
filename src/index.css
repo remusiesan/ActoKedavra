@@ -59,3 +59,17 @@ code {
   bottom: 285px;
   z-index: 1000;
 }
+
+.presentationBoxButton .btn_add_new_actor{
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.presentationBoxModal .btn_add_new_actor{
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.presentationBoxModal.EmptyState_custom .btn_add_new_actor{
+  width: 100%;
+}

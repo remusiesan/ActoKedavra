@@ -71,6 +71,12 @@
     margin: 0px auto;
     border: none;
     cursor: pointer;
+    margin-bottom: 100px;
+    margin-left: 20px;
+}
+
+.set_margin.btn_add_new_actor{
+    margin-bottom: 20px;
 }
 
 .btn_add_new_actor.resize_width{
@@ -193,8 +199,6 @@
     align-items: center;
     padding: 4px;
     position: absolute;
-    width: 40px;
-    height: 40px;
     left: 125px;
     /* top: -15px; */
     content: url(../../images/remove_actor.png);
@@ -471,4 +475,109 @@
     background-color: transparent;
     cursor: pointer;
     float: right;
+}
+
+@media screen and (max-width: 375px) {
+    .remove_actor{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    .btn_sort{
+        height: 52px;
+        width: 441px;
+        font-size: 27px;
+        line-height: 120%;
+    }
+
+    .btn_select{
+        height: 52px;
+        width: 441px;
+        font-size: 27px;
+        line-height: 120%;
+    }
+
+    .remove_actor{
+        width: 52px;
+        height: 52px;
+        left: 80%;
+        top: 1%;
+    }
+
+    .btn_read_more{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+    }
+
+    .btn_read_less{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+    }
+
+    .btn_edit{
+        width: 92%;
+        font-size: 16px;
+        line-height: 120%;
+        height: 35px;
+    }
+
+    .btn_add_new_actor{
+        margin-bottom: 150px;
+        margin-left: 35%;
+    }
+
+    .centerButton .set_margin.btn_add_new_actor{
+        margin-left: 25%;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .remove_actor{
+        width: 52px;
+        height: 52px;
+        left: 85%;
+        top: 1%;
+    }
+
+    .btn_sort{
+        height: 52px;
+        width: 441px;
+        font-size: 27px;
+        line-height: 120%;
+    }
+
+    .btn_select{
+        height: 52px;
+        width: 441px;
+        font-size: 27px;
+        line-height: 120%;
+    }
+
+    .btn_read_more{
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 120%;
+    }
+
+    .btn_read_less{
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 120%;
+    }
+
+    .btn_edit{
+        width: 94%;
+        font-size: 16px;
+        line-height: 120%;
+        height: 45px;
+    }
+
+    .btn_add_new_actor{
+        margin-bottom: 150px;
+        margin-left: 39%;
+    }
 }

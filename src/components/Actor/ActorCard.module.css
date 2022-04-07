@@ -17,3 +17,23 @@
     display: inline;
     float: left;
 }
+
+@media screen and (max-width: 375px) {
+    .actor_card{
+        width: 162px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    .actor_card{
+        width: 100%;
+        min-height: 614px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .actor_card{
+        width: 100%;
+        min-height: 802px;
+    }
+}

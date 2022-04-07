@@ -31,3 +31,39 @@
     flex-grow: 1;
     margin: 0px 2px;
 }
+
+@media screen and (max-width: 375px) {
+
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    .actor_name_description{
+        width: 95%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .actor_name_description p{
+        width: 100%;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 120%;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .actor_name_description{
+        width: 95%;
+        padding-top: 70px;
+    padding-bottom: 30px;
+    }
+
+    .actor_name_description p{
+        width: 100%;
+        font-weight: 300;
+        font-size: 21px;
+        line-height: 25.2px;
+        margin-bottom: 15px;
+    }
+}

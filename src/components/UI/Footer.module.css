@@ -2,7 +2,6 @@
     position: fixed;
     width: auto;
     min-width: 100%;
-    height: 56px;
     left: 0px;
     bottom: 0px;
     border: 1px solid #D9DBE9;
@@ -10,6 +9,7 @@
     order: 2;
     flex-grow: 0;
     background: #FFFFFF;
+    height: 56px;
 }
 
 .footer_date{
@@ -19,13 +19,13 @@
     width: auto;
     height: 16px;
     left: 20px;
-    top: 20px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
     line-height: 120%;
     color: #14142B;
+    top: 20px;
 }
 
 .footer_logo{
@@ -34,11 +34,55 @@
     width: auto;
     height: 16px;
     float: right;
-    top: 20px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 13px;
     line-height: 120%;
     color: #14142B;
+    top: 20px;
+}
+
+@media screen and (max-width: 375px) {
+    .footer{
+        height: 56px;
+    }
+    .footer_date{
+        top: 20px;
+    }
+    .footer_logo{
+        top: 20px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    .footer{
+        height: 108px;
+    }
+    .footer_date{
+        top: 42px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .footer_logo{
+        top: 42px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .footer{
+        height: 108px;
+    }
+    .footer_date{
+        top: 42px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .footer_logo{
+        top: 42px;
+        font-size: 20px;
+        line-height: 24px;
+    }
 }

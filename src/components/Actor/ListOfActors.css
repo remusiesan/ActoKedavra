@@ -5,7 +5,7 @@
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 120px;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
     min-width: 335px;
 }
 
@@ -23,14 +23,67 @@
     float: right;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 375px) {
+
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    .list_of_actors{
+        min-width: 91%;
+        padding-left: 4.5%;
+        padding-right: 4.5%;
+        margin-top: 145px;
+        margin-bottom: 70px;
+    }
+
+    .list_of_actors_filter_buttons{
+        width: 97%;
+    }
+
     .even_card{
         display: inline;
-        margin-left: 20px;
+        margin-right: 3.33%;
+        width: 30%;
+        height: 614px;
+        margin-top: 40px;
     }
     
     .odd_card{
         display: inline;
-        margin-left: 20px;
+        margin-right: 3.33%;
+        width: 30%;
+        height: 614px;
+        float: left;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .list_of_actors{
+        min-width: 95%;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+        margin-bottom: 75px;
+    }
+
+    .list_of_actors_filter_buttons{
+        width: 98%;
+    }
+
+    .even_card{
+        display: inline;
+        margin-right: 2%;
+        width: 23%;
+        height: 802px;
+        margin-top: 40px;
+    }
+    
+    .odd_card{
+        display: inline;
+        margin-right: 2%;
+        width: 23%;
+        height: 802px;
+        float: left;
+        margin-top: 40px;
     }
 }

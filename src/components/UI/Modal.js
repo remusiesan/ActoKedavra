@@ -12,6 +12,8 @@ const Modal = (props) => {
                 props.selectModal(false)
             if(props.className === "sortModal")
                 props.sortModal(false)
+            if(props.className === "addModal")
+                props.addModal(false)
         } else {
             if(props.className === "editModal")
                 props.editModal(true)
@@ -19,6 +21,8 @@ const Modal = (props) => {
                 props.selectModal(true)
             if(props.className === "sortModal")
                 props.sortModal(true)
+            if(props.className === "addModal")
+                props.addModal(true)
         }
     }
     return(

@@ -15,6 +15,7 @@ import "@fontsource/poppins";
 
 function App(props) {
   const [editModal, setEditModal] = useState(false);
+  const [addModal, setAddModal] = useState(false);
   const [chooseActor, setChooseActor] = useState(false);
   const [selectAll, setSelectAll] = useState(false)
   const [selectModal, setSelectModal] = useState(false);
@@ -51,6 +52,11 @@ function App(props) {
     const actorsFromServer = await fetchActors()
     setActors(actorsFromServer)
   }
+  
+  const addModalHandler = async(result) => {
+    setAddModal(false)
+  }
+  
 
   const selectModalHandler = (result) => {
     if(result){
@@ -131,7 +137,11 @@ function App(props) {
   const sortDescendingHandler = (result) => {
     setActors(actors.sort((a, b) => (b.id > a.id) ? 1 : -1))
     setSortModal(false)
-   }
+  }
+
+  const modalAddNewActorHandler = (result) => {
+    setAddModal(true)
+  }
 
   return (
     <div className="App">
@@ -171,6 +181,14 @@ function App(props) {
                 <div className="modalContainer">
                   <Modal title="Edit Actor" showCloseButton={true} className="editModal" editModal={editModalHandler}>
                     <AddEditActorForm actor={actor} buttonText="Update" actionType="updateActor" editModal={editModalHandler} />
+                  </Modal>
+                </div>
+              }
+              <Button class="btn_add_new_actor" title="Add new actor" addNewActor={modalAddNewActorHandler} />
+              {addModal &&
+                <div className="modalContainer">
+                  <Modal title="Add new Actor" showCloseButton={true} className="addModal" addModal={addModalHandler}>
+                    <AddEditActorForm actor={actor} buttonText="Add" actionType="addActor" editModal={addModalHandler} />
                   </Modal>
                 </div>
               }

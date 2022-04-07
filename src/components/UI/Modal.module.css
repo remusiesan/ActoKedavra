@@ -56,3 +56,27 @@
     margin: 0px 0px;
     margin-top: 56px;
 }
+
+@media screen and (max-width: 375px) {
+
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    .container_container, .container_modal, .container_content{
+        width: 1024px;
+    }
+
+    .container_content form{
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .container_container, .container_modal, .container_content{
+        width: 1024px;
+    }
+
+    .container_content form{
+        width: 70%;
+    }
+}

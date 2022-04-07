@@ -5,32 +5,11 @@ import Button from "../UI/Button";
 
 const AddEditActorForm = (props) => {
     const [applyRequired, setApplyRequired] = useState(false);
-    const addEditActorHandler = async(event) => {
-        event.preventDefault();
-        setApplyRequired(true);
-        
-        if(name !== "" && occupation !== "" && hobbies !== "" && description !== ""){
-            if(props.actionType === "updateActor"){
-                await fetch(`http://localhost:5000/actors/${props.actor.id}`,
-                {
-                    method: 'PUT',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(props.actor)
-                })
-                props.editModal(false);
-            } else {
-                props.editModal(false);
-            }       
-        }
-    }
 
     const changeMyMindHandler = () => {
         props.editModal(false);
     }
-    const [picture, setPicture] = useState(props.actor !== undefined && props.actor.picture !== null ? props.actor.picture: "");
+    const [picture, setPicture] = useState(props.actor !== undefined && props.actor.picture !== undefined ? props.actor.picture: "");
     const pictureHandler = (event) => {
         setPicture(event.target.value)
         props.actor.picture = event.target.value
@@ -61,10 +40,33 @@ const AddEditActorForm = (props) => {
         setDescription(event.target.value);
         props.actor.short_description = event.target.value
     }
+
+    const addEditActorHandler = async(event) => {
+        event.preventDefault();
+        setApplyRequired(true);
+        
+        if(picture !== "" && name !== "" && occupation !== "" && hobbies !== "" && description !== ""){
+            if(props.actionType === "updateActor"){
+                await fetch(`http://localhost:5000/actors/${props.actor.id}`,
+                {
+                    method: 'PUT',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(props.actor)
+                })
+                props.editModal(false);
+            } else {
+                props.editModal(false);
+            }       
+        }
+    }
+
     return (
         <form method="POST" onSubmit={addEditActorHandler}>
             <div className={classes.cell_childrens}>
-                <label htmlFor="name">Picture</label>
+                <label htmlFor="picture">Picture</label>
                 <input type="text" id="picture" name="picture" className={(picture === "" && applyRequired) ? classes.fieldRequired_input : ""} onChange={pictureHandler} value={picture} />
                 {(picture === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
             </div>
@@ -94,7 +96,7 @@ const AddEditActorForm = (props) => {
                 {(description === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
             </div> 
 
-            <Button type="submit" class="btn_add_new_actor" title={props.buttonText} />
+            <div class="centerButton"><Button type="submit" class="set_margin btn_add_new_actor" title={props.buttonText} /></div>
 
             <p className={classes.changed_my_mind} onClick={changeMyMindHandler}>I changed my mind</p>
         </form>

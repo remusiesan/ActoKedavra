@@ -117,3 +117,87 @@
     flex-grow: 0;
     margin: 4px 0px;
 }
+
+@media screen and (max-width: 375px) {
+
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    .actor_name_occupation_likes{
+        width: 93%;
+    }
+
+    .actor_name_occupation_likes__name{
+        width: 100%;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+    }
+
+    .actor_name_occupation_likes__occupation_likes{
+        width: 100%;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 130%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .actor_name_occupation_likes__occupation{
+        font-size: 16px;
+    }
+
+    .actor_name_occupation_likes__likes__number{
+        font-size: 16px;
+        margin-left: -10px;
+    }
+
+    .actor_name_occupation_likes__likes__icon{
+        width: 14px;
+        height: 14px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .actor_name_occupation_likes{
+        width: 93%;
+        margin-bottom: 15px;
+    }
+
+    .actor_name_occupation_likes__name{
+        width: 100%;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 130%;
+    }
+
+    .actor_name_occupation_likes__occupation_likes{
+        width: 100%;
+        font-weight: 300;
+        font-size: 23px;
+        line-height: 130%;
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    .actor_name_occupation_likes__likes__number{
+        font-size: 23px;
+        margin-left: -15px;
+    }
+
+    .actor_name_occupation_likes__occupation{
+        font-size: 23px;
+        padding-top: 10px;
+    }
+
+    .actor_name_occupation_likes__likes__icon{
+        width: 16px;
+        height: 17px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: 15px;
+    }
+}

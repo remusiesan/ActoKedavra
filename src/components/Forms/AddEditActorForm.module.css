@@ -4,7 +4,7 @@
     align-items: flex-start;
     padding: 0px;
     position: static;
-    width: 335px;
+    width: auto;
     height: 84px;
     left: 0px;
     top: 0px;
@@ -193,4 +193,19 @@ textarea.fieldRequired_input{
     order: 1;
     flex-grow: 0;
     margin: 0px 0px;
+}
+
+
+@media screen and (max-width: 375px) {
+
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+    .changed_my_mind{
+        margin-bottom: 110px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    
 }
