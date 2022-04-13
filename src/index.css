@@ -38,6 +38,7 @@ code {
 
 .presentationBoxModal{
   width: 100%;
+  max-width: 375px;
   height: 100%;
   display: table;
   min-height: 935px;
@@ -60,16 +61,35 @@ code {
   z-index: 1000;
 }
 
-.presentationBoxButton .btn_add_new_actor{
+.presentationBoxButton .btnAddNewActor{
+  margin-bottom: -15px;
+  margin-left: 0px;
+  margin-top: 15px;
+}
+
+.presentationBoxButton .btnEdit{
+  margin: 0px;
+}
+
+.presentationBoxModal .btnAddNewActor{
   margin-bottom: 0px;
   margin-left: 0px;
 }
 
-.presentationBoxModal .btn_add_new_actor{
-  margin-bottom: 0px;
-  margin-left: 0px;
-}
-
-.presentationBoxModal.EmptyState_custom .btn_add_new_actor{
+.presentationBoxModal.emptyStateCustom .btnAddNewActor{
   width: 100%;
+}
+
+.presentationBoxModal div{
+  width: auto;
+  max-width: 375px;
+}
+
+.presentationBoxModal div form div{
+  width: 95%;
+  margin-left: 2.5%;
+}
+
+.presentationBoxModal div form div.centerButton{
+  display: contents;
 }

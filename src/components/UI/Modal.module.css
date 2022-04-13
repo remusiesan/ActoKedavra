@@ -1,9 +1,4 @@
-.container_container{
-    /* position: relative;
-    width: 375px;
-    height:auto;
-    max-height: 790px; */
-
+.containerContainer{
     position: relative;
     width: 375px;
     height: auto;
@@ -12,7 +7,7 @@
     float: left;
 }
 
-.container_modal{
+.containerModal{
     position: absolute;
     width: 375px;
     height:auto;
@@ -22,12 +17,10 @@
     overflow: auto;
 }
 
-.container_content{
+.containerContent{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 56px 20px 32px; */
-    /* position: absolute; */
     width: 375px;
     height:auto;
     max-height: 865px;
@@ -37,7 +30,7 @@
     border-radius: 24px 24px 0px 0px;
 }
 
-.title_modal{
+.titleModal{
     position: static;
     left: 23.28%;
     right: 23.28%;
@@ -62,21 +55,21 @@
 }
 
 @media screen and (min-width: 376px) and (max-width: 1024px) {
-    .container_container, .container_modal, .container_content{
+    .containerContainer, .containerModal, .containerContent{
         width: 1024px;
     }
 
-    .container_content form{
+    .containerContent form{
         width: 70%;
     }
 }
 
 @media screen and (min-width: 1025px) {
-    .container_container, .container_modal, .container_content{
+    .containerContainer, .containerModal, .containerContent{
         width: 1024px;
     }
 
-    .container_content form{
+    .containerContent form{
         width: 70%;
     }
 }

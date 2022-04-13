@@ -115,13 +115,13 @@ function App(props) {
     if(result){
       let arrActorIds = localStorage.getItem("actorsToDelete").split(',')
       //console.log(actors)
-      const newListOfActors = []
+      // const newListOfActors = []
       arrActorIds.forEach(id => {
         var result  = actors.filter(function(actor){return actor.id === parseInt(id)} );
         if(result.length > 0){
           setTimeout(() => {
             deleteActorById(result[0].id)
-            setActors(actors.splice(actors.findIndex(({id}) => id == parseInt(result[0].id)), 1))
+            setActors(actors.splice(actors.findIndex(({id}) => id === parseInt(result[0].id)), 1))
           }, 500);
         }
       })
@@ -163,7 +163,7 @@ function App(props) {
                 <div className="modalSelectContainer">
                   <Modal title={"0 Selected"} className="selectModal" showCloseButton={true} selectModal={selectModalHandler}> 
                     <SelectAll selectedAll={selectedAllHandler}/>
-                    <Button class="btn_delete set_margin_top" title="Delete" deleteActors={deleteActorsHandler}/>
+                    <Button class="btnDelete set_margin_top" title="Delete" deleteActors={deleteActorsHandler}/>
                   </Modal>
                 </div>
               }
@@ -171,8 +171,8 @@ function App(props) {
               {sortModal &&
                 <div className="modalSelectContainer">
                   <Modal title="Select type of sort" className="sortModal" showCloseButton={true} sortModal={selectModalHandler}> 
-                    <Button class="btn_sort_ascending" title="Ascending" sortAscending={sortAscendingHandler} />
-                    <Button class="btn_sort_descending" title="Descending" sortDescending={sortDescendingHandler} />
+                    <Button class="btnSortAscending" title="Ascending" sortAscending={sortAscendingHandler} />
+                    <Button class="btnSortDescending" title="Descending" sortDescending={sortDescendingHandler} />
                   </Modal>
                 </div>
               }
@@ -184,7 +184,7 @@ function App(props) {
                   </Modal>
                 </div>
               }
-              <Button class="btn_add_new_actor" title="Add new actor" addNewActor={modalAddNewActorHandler} />
+              <Button class="btnAddNewActor" title="Add new actor" addNewActor={modalAddNewActorHandler} />
               {addModal &&
                 <div className="modalContainer">
                   <Modal title="Add new Actor" showCloseButton={true} className="addModal" addModal={addModalHandler}>

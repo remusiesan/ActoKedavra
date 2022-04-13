@@ -1,4 +1,4 @@
-.actor_card{
+.actorCard{
     margin-top: 34px;
     position: static;
     width: 162px;
@@ -19,20 +19,20 @@
 }
 
 @media screen and (max-width: 375px) {
-    .actor_card{
+    .actorCard{
         width: 162px;
     }
 }
 
 @media screen and (min-width: 376px) and (max-width: 1024px) {
-    .actor_card{
+    .actorCard{
         width: 100%;
         min-height: 614px;
     }
 }
 
 @media screen and (min-width: 1025px) {
-    .actor_card{
+    .actorCard{
         width: 100%;
         min-height: 802px;
     }

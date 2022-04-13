@@ -1,18 +1,13 @@
 .footer{
     position: fixed;
-    width: auto;
     min-width: 100%;
     left: 0px;
     bottom: 0px;
     border: 1px solid #D9DBE9;
-    flex: none;
-    order: 2;
-    flex-grow: 0;
     background: #FFFFFF;
-    height: 56px;
 }
 
-.footer_date{
+.footerDate{
     position: absolute;
     float: left;
     display: inherit;
@@ -28,7 +23,7 @@
     top: 20px;
 }
 
-.footer_logo{
+.footerLogo{
     position: relative;
     margin-right: 20px;
     width: auto;
@@ -47,10 +42,10 @@
     .footer{
         height: 56px;
     }
-    .footer_date{
+    .footerDate{
         top: 20px;
     }
-    .footer_logo{
+    .footerLogo{
         top: 20px;
     }
 }
@@ -59,12 +54,12 @@
     .footer{
         height: 108px;
     }
-    .footer_date{
+    .footerDate{
         top: 42px;
         font-size: 20px;
         line-height: 24px;
     }
-    .footer_logo{
+    .footerLogo{
         top: 42px;
         font-size: 20px;
         line-height: 24px;
@@ -75,12 +70,12 @@
     .footer{
         height: 108px;
     }
-    .footer_date{
+    .footerDate{
         top: 42px;
         font-size: 20px;
         line-height: 24px;
     }
-    .footer_logo{
+    .footerLogo{
         top: 42px;
         font-size: 20px;
         line-height: 24px;

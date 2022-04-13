@@ -1,4 +1,4 @@
-.select_all_container{
+.selectAllContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -16,7 +16,7 @@
     margin: 0px 0px;
 }
 
-.select_all_text{
+.selectAllText{
     position: static;
     width: auto;
     height: 22px;
@@ -36,11 +36,4 @@
     order: 0;
     flex-grow: 0;
     margin: 0px 0px;
-}
-
-.select_all_image{
-    position: relative;
-    width: 375px;
-    height: 2029px;
-    background: #F7F7FC;
 }

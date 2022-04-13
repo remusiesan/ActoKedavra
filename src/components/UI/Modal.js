@@ -26,11 +26,11 @@ const Modal = (props) => {
         }
     }
     return(
-        <div className={classes.container_container}>
-           <div className={classes.container_modal}>
-                <div className={classes.container_content}>
-                    {props.showCloseButton && <Button class="close_modal" closeModal={isCloseModal}/>}
-                    <h2 className={classes.title_modal}>{props.title}</h2>
+        <div className={classes.containerContainer}>
+           <div className={classes.containerModal}>
+                <div className={classes.containerContent}>
+                    {props.showCloseButton && <Button class="closeModal" closeModal={isCloseModal}/>}
+                    <h2 className={classes.titleModal}>{props.title}</h2>
                     {props.children}
                 </div>
            </div>

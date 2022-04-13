@@ -34,7 +34,7 @@ const AddEditActorForm = (props) => {
     }
 
     const [description, setDescription] = useState(props.actor !== undefined && props.actor.short_description !== undefined ? props.actor.short_description: "");;
-    const [remainedCharacters, setRemainedCharacters] = useState(props.actor != undefined && props.actor.short_description !== undefined ? 180-props.actor.short_description.length : "180");
+    const [remainedCharacters, setRemainedCharacters] = useState(props.actor !== undefined && props.actor.short_description !== undefined ? 180-props.actor.short_description.length : "180");
     const numberOfCharactersHandler = (event) => {
         setRemainedCharacters(180-event.target.value.length);
         setDescription(event.target.value);
@@ -65,40 +65,40 @@ const AddEditActorForm = (props) => {
 
     return (
         <form method="POST" onSubmit={addEditActorHandler}>
-            <div className={classes.cell_childrens}>
-                <label htmlFor="picture">Picture</label>
-                <input type="text" id="picture" name="picture" className={(picture === "" && applyRequired) ? classes.fieldRequired_input : ""} onChange={pictureHandler} value={picture} />
+            <div className={classes.cellChildrens}>
+                <label className={classes.cellChildrensLabel} htmlFor="picture">Picture</label>
+                <input type="text" id="picture" name="picture" className={(picture === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={pictureHandler} value={picture} />
                 {(picture === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
             </div>
 
-            <div className={classes.cell_childrens}>
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" className={(name === "" && applyRequired) ? classes.fieldRequired_input : ""} onChange={nameHandler} value={name} />
+            <div className={classes.cellChildrens}>
+                <label className={classes.cellChildrensLabel} htmlFor="name">Name</label>
+                <input type="text" id="name" name="name" className={(name === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={nameHandler} value={name} />
                 {(name === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
             </div>
 
-            <div className={classes.cell_childrens}>
-                <label htmlFor="occupation">Occupation besides acting</label>
-                <input type="text" id="occupation" name="occupation" className={(occupation === "" && applyRequired) ? classes.fieldRequired_input : ""} onChange={occupationHandler} value={occupation} />
+            <div className={classes.cellChildrens}>
+                <label className={classes.cellChildrensLabel} htmlFor="occupation">Occupation besides acting</label>
+                <input type="text" id="occupation" name="occupation" className={(occupation === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={occupationHandler} value={occupation} />
                 {(occupation === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
             </div> 
 
-            <div className={classes.cell_childrens}>
-                <label htmlFor="hobbies">Hobbies</label>
-                <input type="text" id="hobbies" name="hobbies" className={(hobbies === "" && applyRequired) ? classes.fieldRequired_input : ""} onChange={hobbiesHandler}  value={hobbies} />
+            <div className={classes.cellChildrens}>
+                <label className={classes.cellChildrensLabel} htmlFor="hobbies">Hobbies</label>
+                <input type="text" id="hobbies" name="hobbies" className={(hobbies === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={hobbiesHandler}  value={hobbies} />
                 {(hobbies === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
             </div> 
 
-            <div className={classes.cell_childrens_textarea}>
-                <label htmlFor="description">Short description</label>
-                <textarea type="text" rows="4" maxLength="180" onChange={numberOfCharactersHandler} id="description" name="description" className={(description === "" && applyRequired) ? classes.fieldRequired_input : ""} value={description}/>
-                <span className={classes.remained_characters}>{remainedCharacters} characters remained</span>
+            <div className={classes.cellChildrensTextarea}>
+                <label className={classes.cellChildrensTextareaLabel} htmlFor="description">Short description</label>
+                <textarea type="text" rows="4" maxLength="180" onChange={numberOfCharactersHandler} id="description" name="description" className={(description === "" && applyRequired) ? classes.fieldRequiredInput : ""} value={description}/>
+                <span className={classes.remainedCharacters}>{remainedCharacters} characters remained</span>
                 {(description === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
             </div> 
 
-            <div class="centerButton"><Button type="submit" class="set_margin btn_add_new_actor" title={props.buttonText} /></div>
+            <div className="centerButton"><Button type="submit" class="setMargin btnAddNewActor" title={props.buttonText} /></div>
 
-            <p className={classes.changed_my_mind} onClick={changeMyMindHandler}>I changed my mind</p>
+            <p className={classes.changedMyMind} onClick={changeMyMindHandler}>I changed my mind</p>
         </form>
     )
 }

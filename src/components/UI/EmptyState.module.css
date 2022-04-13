@@ -1,4 +1,4 @@
-.empty_state_container{
+.emptyStateContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +12,7 @@
     transform: translateY(-50%);
 }
 
-.emoji_sad_frown{
+.emojiSadFrown{
     position: static;
     width: 100px;
     height: 100px;
@@ -24,7 +24,7 @@
     margin: 24px 0px;
 }
 
-.empty_state_container .description{
+.emptyStateContainer .description{
     position: static;
     width: 335px;
     left: calc(50% - 335px/2);

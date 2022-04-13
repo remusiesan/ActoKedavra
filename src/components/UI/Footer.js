@@ -8,8 +8,8 @@ const Footer = () => {
     const date = `${current.getDate()} ${monthName} ${current.getFullYear()}`;
     return(
         <footer className={classes.footer}>
-            <div className={classes.footer_date}>{date}</div>
-            <div className={classes.footer_logo}>ActoKedavra</div>
+            <div className={classes.footerDate}>{date}</div>
+            <div className={classes.footerLogo}>ActoKedavra</div>
         </footer>
     )
 }

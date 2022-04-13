@@ -3,7 +3,7 @@ import classes from './ActorCard.module.css';
 
 const ActorCard = (props) => {
     return (
-        <div className={classes.actor_card}>
+        <div className={classes.actorCard}>
             {props.children}
         </div>
     )

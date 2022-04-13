@@ -9,8 +9,8 @@ const SelectAll = (props) => {
     }
 
     return(
-        <div className={classes.select_all_container}>
-            <p className={classes.select_all_text}>Select all</p>
+        <div className={classes.selectAllContainer}>
+            <p className={classes.selectAllText}>Select all</p>
             <Button class="selectAll" selectedAll={selectedAllHandler}/>
         </div>
     )

@@ -1,4 +1,4 @@
-.cell_childrens{
+.cellChildrens{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -14,7 +14,7 @@
     margin: 24px 0px; 
 }
 
-.cell_childrens_textarea{
+.cellChildrensTextarea{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -30,7 +30,7 @@
     margin: 24px 0px;
 }
 
-.cell_childrens label{
+.cellChildrensLabel{
     position: static;
     width: auto;
     height: 18px;
@@ -50,7 +50,7 @@
     margin: 5px 0px;
 }
 
-.cell_childrens input{
+.cellChildrens input{
     width: 100%;
     min-height: 50px;
     border: none;
@@ -60,7 +60,7 @@
     max-width: -webkit-fill-available;
 }
 
-.cell_childrens_textarea label{
+.cellChildrensTextareaLabel{
     position: static;
     width: auto;
     height: 18px;
@@ -80,7 +80,7 @@
     margin: 16px 0px;
 }
 
-.cell_childrens_textarea textarea{
+.cellChildrensTextarea textarea{
     width: 100%;
     height: 163px;
     background: #EFF0F7;
@@ -90,7 +90,7 @@
     max-width: -webkit-fill-available;
 }
 
-.changed_my_mind{
+.changedMyMind{
     position: static;
     left: 27.76%;
     right: 27.76%;
@@ -112,7 +112,7 @@
     cursor: pointer;
 }
 
-.remained_characters{
+.remainedCharacters{
     position: static;
     width: auto;
     height: 13px;
@@ -134,7 +134,7 @@
     margin-top: -25px;
 }
 
-input.fieldRequired_input{
+input.fieldRequiredInput{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -154,7 +154,7 @@ input.fieldRequired_input{
     margin: 0px 0px;
 }
 
-textarea.fieldRequired_input{
+textarea.fieldRequiredInput{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -195,17 +195,8 @@ textarea.fieldRequired_input{
     margin: 0px 0px;
 }
 
-
-@media screen and (max-width: 375px) {
-
-}
-
 @media screen and (min-width: 376px) and (max-width: 1024px) {
-    .changed_my_mind{
+    .changedMyMind{
         margin-bottom: 110px;
     }
-}
-
-@media screen and (min-width: 1025px) {
-    
 }

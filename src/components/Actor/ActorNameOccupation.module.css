@@ -1,4 +1,4 @@
-.actor_name_occupation_likes{
+.actorNameOccupationLikes{
     display: table;
     float: left;
     /* display: flex; */
@@ -16,7 +16,7 @@
     padding: 10px;
 }
 
-.actor_name_occupation_likes__occupation_likes{
+.occupationLikes{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,7 +33,7 @@
     margin: 4px 0px;
 }
 
-.actor_name_occupation_likes__likes{
+.likes{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,7 +49,7 @@
     margin: 0px 0px;
 }
 
-.actor_name_occupation_likes__likes__icon{
+.likesIcon{
     position: static;
     width: 10px;
     height: 11px;
@@ -62,7 +62,7 @@
     background: url("../../images/like.png");
 }
 
-.actor_name_occupation_likes__likes__number{
+.likesNumber{
     position: static;
     width: 14px;
     height: 14px;
@@ -82,7 +82,7 @@
     margin: 0px 2px; 
 }
 
-.actor_name_occupation_likes__occupation{
+.occupation{
     position: static;
     width: auto;
     height: 13px;
@@ -123,7 +123,7 @@
 }
 
 @media screen and (min-width: 376px) and (max-width: 1024px) {
-    .actor_name_occupation_likes{
+    .actorNameOccupationLikes{
         width: 93%;
     }
 
@@ -134,7 +134,7 @@
         line-height: 130%;
     }
 
-    .actor_name_occupation_likes__occupation_likes{
+    .occupationLikes{
         width: 100%;
         font-weight: 300;
         font-size: 16px;
@@ -143,16 +143,16 @@
         margin-bottom: 15px;
     }
 
-    .actor_name_occupation_likes__occupation{
+    .occupation{
         font-size: 16px;
     }
 
-    .actor_name_occupation_likes__likes__number{
+    .likesNumber{
         font-size: 16px;
         margin-left: -10px;
     }
 
-    .actor_name_occupation_likes__likes__icon{
+    .likesIcon{
         width: 14px;
         height: 14px;
         background-size: contain;
@@ -162,7 +162,7 @@
 }
 
 @media screen and (min-width: 1025px) {
-    .actor_name_occupation_likes{
+    .actorNameOccupationLikes{
         width: 93%;
         margin-bottom: 15px;
     }
@@ -174,7 +174,7 @@
         line-height: 130%;
     }
 
-    .actor_name_occupation_likes__occupation_likes{
+    .occupationLikes{
         width: 100%;
         font-weight: 300;
         font-size: 23px;
@@ -183,17 +183,17 @@
         margin-bottom: 25px;
     }
 
-    .actor_name_occupation_likes__likes__number{
+    .likesNumber{
         font-size: 23px;
         margin-left: -15px;
     }
 
-    .actor_name_occupation_likes__occupation{
+    .occupation{
         font-size: 23px;
         padding-top: 10px;
     }
 
-    .actor_name_occupation_likes__likes__icon{
+    .likesIcon{
         width: 16px;
         height: 17px;
         background-size: contain;

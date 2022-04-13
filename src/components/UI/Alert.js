@@ -5,14 +5,14 @@ import './Alert.css';
 const Alert = (props) => {
     return(
         <div className={props.type}>
-            <div className="alert_content">
-                {props.type === "success_notification"  && <img className="alert_info_image" src="./images/alert_success.png" alt=""/>}
-                {props.type === "warning_notification"  && <img className="alert_info_image" src="./images/alert_warning.png" alt=""/>}
-                {props.type === "danger_notification"  && <img className="alert_info_image" src="./images/alert_danger.png" alt=""/>}
-                <p>{props.message}</p>
-                {props.type === "success_notification"  && <Button class="alert_close_success" />}
-                {props.type === "warning_notification"  && <Button class="alert_close_warning" />}
-                {props.type === "danger_notification"  && <Button class="alert_close_danger" />}
+            <div className="alertContent">
+                {props.type === "successNotification"  && <img className="alertInfoImage" src="./images/alert_success.png" alt=""/>}
+                {props.type === "warningNotification"  && <img className="alertInfoImage" src="./images/alert_warning.png" alt=""/>}
+                {props.type === "dangerNotification"  && <img className="alertInfoImage" src="./images/alert_danger.png" alt=""/>}
+                <p className="alertContentParagraph">{props.message}</p>
+                {props.type === "successNotification"  && <Button class="alertCloseSuccess" />}
+                {props.type === "warningNotification"  && <Button class="alertCloseWarning" />}
+                {props.type === "dangerNotification"  && <Button class="alertCloseDanger" />}
             </div>
         </div>
     )

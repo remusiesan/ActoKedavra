@@ -1,4 +1,4 @@
-.list_of_actors{
+.listOfActors{
     margin-bottom: 34px;
     display: inline-block;
     width: auto;
@@ -9,16 +9,16 @@
     min-width: 335px;
 }
 
-.list_of_actors_filter_buttons{
+.filterButtons{
     margin-bottom: 5px;
 }
 
-.even_card{
+.evenCard{
     display: inline;
     float: left;
 }
 
-.odd_card{
+.oddCard{
     display: inline;
     float: right;
 }
@@ -28,7 +28,7 @@
 }
 
 @media screen and (min-width: 376px) and (max-width: 1024px) {
-    .list_of_actors{
+    .listOfActors{
         min-width: 91%;
         padding-left: 4.5%;
         padding-right: 4.5%;
@@ -36,11 +36,11 @@
         margin-bottom: 70px;
     }
 
-    .list_of_actors_filter_buttons{
+    .filterButtons{
         width: 97%;
     }
 
-    .even_card{
+    .evenCard{
         display: inline;
         margin-right: 3.33%;
         width: 30%;
@@ -48,7 +48,7 @@
         margin-top: 40px;
     }
     
-    .odd_card{
+    .oddCard{
         display: inline;
         margin-right: 3.33%;
         width: 30%;
@@ -59,18 +59,18 @@
 }
 
 @media screen and (min-width: 1025px) {
-    .list_of_actors{
+    .listOfActors{
         min-width: 95%;
         padding-left: 2.5%;
         padding-right: 2.5%;
         margin-bottom: 75px;
     }
 
-    .list_of_actors_filter_buttons{
+    .filterButtons{
         width: 98%;
     }
 
-    .even_card{
+    .evenCard{
         display: inline;
         margin-right: 2%;
         width: 23%;
@@ -78,7 +78,7 @@
         margin-top: 40px;
     }
     
-    .odd_card{
+    .oddCard{
         display: inline;
         margin-right: 2%;
         width: 23%;

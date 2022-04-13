@@ -15,9 +15,9 @@ const ActorDescription = (props) => {
         }
     }
     return (    
-        <div className={classes.actor_name_description}>
-            <p>{showMore ? description : description.substr(0, window.innerWidth >=1024 ? 35 : 30)+'...'}</p>
-            <Button class="btn_read_more" showMore={isShowMore} title="Read more"/>
+        <div className={classes.actorNameDescription}>
+            <p className={classes.description}>{showMore ? description : description.substr(0, window.innerWidth >=1024 ? 35 : 30)+'...'}</p>
+            <Button class="btnReadMore" showMore={isShowMore} title="Read more"/>
         </div>
     )
 }
