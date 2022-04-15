@@ -1,120 +1,62 @@
 .actorNameOccupationLikes{
     display: table;
-    float: left;
-    /* display: flex; */
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    position: static;
     width: 140px;
     height: 34px;
     left: 10px;
     top: 10px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
     padding: 10px;
 }
 
 .occupationLikes{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0px;
-    position: static;
     width: 140px;
     height: 14px;
-    left: 0px;
-    top: 20px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
     margin: 4px 0px;
 }
 
 .likes{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    position: static;
     width: 26px;
     height: 14px;
-    left: 114px;
-    top: 0px;
-    flex: none;
     order: 1;
-    flex-grow: 0;
-    margin: 0px 0px;
 }
 
 .likesIcon{
-    position: static;
     width: 10px;
     height: 11px;
-    left: 16px;
-    top: 2px;
     flex: none;
     order: 1;
-    flex-grow: 0;
-    margin: 0px 2px;
     background: url("../../images/like.png");
 }
 
 .likesNumber{
-    position: static;
-    width: 14px;
-    height: 14px;
-    left: 0px;
-    top: 0px;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 600;
     font-size: 11px;
-    line-height: 130%;
     display: flex;
     align-items: center;
     color: #F4B740;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
     margin: 0px 2px; 
 }
 
 .occupation{
-    position: static;
-    width: auto;
     height: 13px;
-    left: 0px;
-    bottom: 0.5px;
     font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 300;
     font-size: 11px;
     line-height: 120%;
     color: #4E4B66;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 .actor_name_occupation_likes__name{
-    position: static;
     width: 140px;
     height: 16px;
-    left: 0px;
-    bottom: 18px;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 600;
     font-size: 13px;
     line-height: 120%;
     color: #14142B;
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
     margin: 4px 0px;
 }
 

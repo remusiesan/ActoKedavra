@@ -5,7 +5,7 @@
     top: 0%;
     background: #FFFFFF;
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.1));
-    z-index: 1000;
+    z-index: 10;
 }
 
 .headerLogo{
@@ -15,13 +15,17 @@
     bottom: 17.71%;
     font-family: 'Poppins';
     font-weight: 700;
-    font-size: 16px;
     color: #14142B;
+    text-align: center;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px){
     .header{
         height: 96px;
+    }
+
+    .headerLogo{
+        font-size: 16px;
     }
 }
 
@@ -32,7 +36,6 @@
     .headerLogo{
         font-size: 30px;
         line-height: 36.4px;
-        top: 40px;
     }
 }
 
@@ -43,6 +46,5 @@
     .headerLogo{
         font-size: 32px;
         line-height: 38.4px;
-        top: 30px;
     }
 }

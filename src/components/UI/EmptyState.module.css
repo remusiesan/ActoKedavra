@@ -4,41 +4,21 @@
     align-items: center;
     padding: 0px;
     position: absolute;
-    width: 335px;
-    height: 284px;
-    left: 20px;
+    width: 100%;
     top: 50%;
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
 .emojiSadFrown{
-    position: static;
-    width: 100px;
-    height: 100px;
-    left: 117.5px;
-    top: 0px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
     margin: 24px 0px;
 }
 
 .emptyStateContainer .description{
-    position: static;
-    width: 335px;
-    left: calc(50% - 335px/2);
-    top: 43.66%;
-    bottom: 28.17%;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 40px;
     text-align: center;
     color: #14142B;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
     margin: 24px 0px;
 }

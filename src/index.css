@@ -53,6 +53,7 @@ code {
   position: fixed;
   top: 0px;
   z-index: 1000;
+  width: 100%;
 }
 
 .modalSelectContainer{
@@ -62,7 +63,7 @@ code {
 }
 
 .presentationBoxButton .btnAddNewActor{
-  margin-bottom: -15px;
+  margin-bottom: 15px;
   margin-left: 0px;
   margin-top: 15px;
 }

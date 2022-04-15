@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import './Button.css';
 
 const Button = (props) => {
-    // const [idActor, setIndexActor] = useState(0)
     const [classname, setClassname] = useState(props.class)
     const [title, setTitle] = useState(props.title)
     const onClick = () => {
@@ -87,7 +86,7 @@ const Button = (props) => {
             props.sortDescending(true)
         }
 
-        if(classname === "btnAddNewActor"){
+        if(classname === "btnAddNewActor" || classname == 'btnAddNewActor resizeWidth'){
             props.addNewActor(true)
         }
     }

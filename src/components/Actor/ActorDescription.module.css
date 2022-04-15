@@ -1,39 +1,17 @@
 .actorNameDescription{
     display: table;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    position: static;
-    width: 142px;
-    height: auto;
+    float: left;
+    width: auto;
     margin-left: 10px;
-    top: 106px;
-    flex: none;
-    order: 2;
-    align-self: stretch;
-    flex-grow: 0;
 }
 
 .description{
-    position: static;
-    width: 142px;
-    height: auto;
-    left: 0px;
-    bottom: 0px;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 300;
     font-size: 10px;
     line-height: 120%;
     color: #6E7191;
-    flex: none;
-    order: 0;
-    flex-grow: 1;
     margin: 0px 2px;
-}
-
-@media screen and (max-width: 375px) {
-
 }
 
 @media screen and (min-width: 376px) and (max-width: 1024px) {

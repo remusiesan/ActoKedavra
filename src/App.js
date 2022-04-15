@@ -13,7 +13,7 @@ import Footer from "./components/UI/Footer";
 
 import "@fontsource/poppins";
 
-function App(props) {
+function App() {
   const [editModal, setEditModal] = useState(false);
   const [addModal, setAddModal] = useState(false);
   const [chooseActor, setChooseActor] = useState(false);
@@ -143,6 +143,10 @@ function App(props) {
     setAddModal(true)
   }
 
+  const setAddModalHandler = (result) => {
+    setAddModal(true)
+  }
+
   return (
     <div className="App">
        <Router>
@@ -156,7 +160,7 @@ function App(props) {
               }
 
               {actors.length === 0 &&
-                <EmptyState />
+                <EmptyState setAddModal={setAddModalHandler}/>
               }
 
               {selectModal &&

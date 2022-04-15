@@ -5,7 +5,7 @@
       "picture": "/images/leonardo.png",
       "name": "Leonardo Dicaprio",
       "occupation": "Actor & Writer",
-      "score": 44,
+      "score": 56,
       "hobbies": [
         "Traveling",
         "Reading",
@@ -39,6 +39,19 @@
         "Photography"
       ],
       "short_description": "Jennifer Aniston was born in Sherman Oaks, California, t..."
+    },
+    {
+      "id": 4,
+      "picture": "/images/johnson.png",
+      "name": "Dwayne Johnson",
+      "occupation": "Actor & Producer",
+      "score": 32,
+      "hobbies": [
+        "Music",
+        "Wrestling",
+        "Martial Arts"
+      ],
+      "short_description": "Dwayne Douglas Johnson, also known as The Rock, wa..."
     }
   ]
 }
