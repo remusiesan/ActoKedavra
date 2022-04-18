@@ -58,7 +58,8 @@ code {
 
 .modalSelectContainer{
   position: fixed;
-  bottom: 285px;
+  bottom: 0px;
+  width: 100%;
   z-index: 1000;
 }
 

@@ -1,25 +1,17 @@
 .footer{
     position: fixed;
     min-width: 100%;
-    left: 0px;
     bottom: 0px;
     border: 1px solid #D9DBE9;
     background: #FFFFFF;
-    height: 56px;
 }
 
 .footerDate{
     position: absolute;
-    float: left;
-    display: inherit;
-    width: auto;
-    height: 16px;
     left: 20px;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 500;
     font-size: 13px;
-    line-height: 120%;
     color: #14142B;
     top: 20px;
 }
@@ -39,10 +31,11 @@
     top: 20px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
     .footer{
         height: 56px;
     }
+
     .footerDate{
         top: 20px;
     }

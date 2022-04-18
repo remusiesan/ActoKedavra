@@ -1,6 +1,6 @@
 .actorNameOccupationLikes{
     display: table;
-    width: 140px;
+    width: 100%;
     height: 34px;
     left: 10px;
     top: 10px;
@@ -24,8 +24,6 @@
 }
 
 .likesIcon{
-    width: 10px;
-    height: 11px;
     flex: none;
     order: 1;
     background: url("../../images/like.png");
@@ -50,7 +48,6 @@
 }
 
 .actor_name_occupation_likes__name{
-    width: 140px;
     height: 16px;
     font-family: 'Poppins';
     font-weight: 600;
@@ -61,7 +58,10 @@
 }
 
 @media screen and (max-width: 375px) {
-
+    .likesIcon{
+        width: 10px;
+        height: 11px;
+    }
 }
 
 @media screen and (min-width: 376px) and (max-width: 1024px) {
