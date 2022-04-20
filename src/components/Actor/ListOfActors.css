@@ -5,84 +5,51 @@
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 120px;
-    /* margin-bottom: 100px; */
     min-width: 335px;
-}
-
-.filterButtons{
-    margin-bottom: 5px;
 }
 
 .evenCard{
     display: inline;
     float: left;
+    height: auto;
 }
 
 .oddCard{
+    height: auto;
     display: inline;
     float: right;
 }
 
 @media screen and (max-width: 375px) {
-
+    .evenCard, .oddCard{
+       width: 48%;
+    }
 }
 
 @media screen and (min-width: 376px) and (max-width: 1024px) {
-    .listOfActors{
-        min-width: 91%;
-        padding-left: 4.5%;
-        padding-right: 4.5%;
-        margin-top: 145px;
-        margin-bottom: 70px;
-    }
-
-    .filterButtons{
-        width: 97%;
-    }
 
     .evenCard{
-        display: inline;
-        margin-right: 3.33%;
-        width: 30%;
-        height: 614px;
-        margin-top: 40px;
+        margin-right: 2.33%;
+        width: 31%;
     }
     
     .oddCard{
-        display: inline;
-        margin-right: 3.33%;
-        width: 30%;
-        height: 614px;
+        margin-right: 2.33%;
+        width: 31%;
         float: left;
-        margin-top: 40px;
     }
 }
 
 @media screen and (min-width: 1025px) {
-    .listOfActors{
-        min-width: 95%;
-        padding-left: 2.5%;
-        padding-right: 2.5%;
-        margin-bottom: 75px;
-    }
-
-    .filterButtons{
-        width: 98%;
-    }
-
     .evenCard{
-        display: inline;
         margin-right: 2%;
         width: 23%;
-        height: 802px;
         margin-top: 40px;
     }
     
     .oddCard{
-        display: inline;
         margin-right: 2%;
         width: 23%;
-        height: 802px;
         float: left;
         margin-top: 40px;
     }

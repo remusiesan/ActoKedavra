@@ -8,12 +8,15 @@
 .description{
     font-family: 'Poppins';
     font-weight: 300;
-    font-size: 10px;
-    line-height: 120%;
     color: #6E7191;
     margin: 0px 2px;
 }
 
+@media screen and (max-width: 375px) {
+    .description{
+        font-size: 10px;
+    }
+}
 @media screen and (min-width: 376px) and (max-width: 1024px) {
     .actorNameDescription{
         width: 95%;
@@ -22,11 +25,7 @@
     }
 
     .description{
-        width: 100%;
-        font-weight: 300;
         font-size: 16px;
-        line-height: 120%;
-        margin-bottom: 15px;
     }
 }
 
@@ -34,7 +33,6 @@
     .actorNameDescription{
         width: 95%;
         padding-top: 70px;
-    padding-bottom: 30px;
     }
 
     .description{

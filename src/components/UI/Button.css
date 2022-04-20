@@ -1,25 +1,25 @@
 .btnSort{
     width: 45%;
-    height: 37px;
     background: #EEE5FE;
     border: 1px solid #6308F7;
     border-radius: 10px;
     font-family: 'Poppins';
     font-weight: 500;
-    font-size: 14px;
     cursor: pointer;
+}
+
+.centerButton{
+    text-align: center;
 }
 
 .btnSelect{
     width: 45%;
-    height: 37px;
     background: #EEE5FE;
     border: 1px solid #6308F7;
     border-radius: 10px;
     float: right;
     font-family: 'Poppins';
     font-weight: 500;
-    font-size: 14px;
     cursor: pointer;
 }
 
@@ -28,10 +28,6 @@
 }
  
 .btnAddNewActor{
-    width: 335px;
-    height: 56px;
-    float: left;
-    bottom: 88px;
     background: #6308F7;
     border-radius: 12px;
     font-family: 'Poppins';
@@ -43,6 +39,7 @@
     margin-bottom: 100px;
     margin-left: 20px;
     line-height: 56px;
+    min-width: 335px;
 }
 
 .setMargin.btnAddNewActor{
@@ -103,11 +100,13 @@
     display: flex;
     padding: 4px;
     position: absolute;
-    left: 125px;
     content: url(../../images/remove_actor.png);
     border: none;
     background-color: transparent;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    right: 0%;
 }
 
 .chooseActor{
@@ -323,32 +322,21 @@
 }
 
 @media screen and (max-width: 375px) {
-    .removeActor{
-        width: 40px;
-        height: 40px;
-    }
+    .btnSort, .btnSelect{
+        height: 37px;
+        font-size: 14px;
+   }
 }
 
 @media screen and (min-width: 376px) and (max-width: 1024px) {
-    .btnSort{
+    .btnSort, .btnSelect{
         height: 52px;
         font-size: 27px;
-        line-height: 120%;
-    }
-
-    .btnSelect{
-        height: 52px;
-        width: 45%;
-        float: right;
-        font-size: 27px;
-        line-height: 120%;
-    }
+   }
 
     .removeActor{
         width: 52px;
         height: 52px;
-        left: 80%;
-        top: 1%;
     }
 
     .btnReadMore{
@@ -374,36 +362,17 @@
         margin-bottom: 150px;
         margin-left: 35%;
     }
-
-    .centerButton .setMargin.btnAddNewActor{
-        margin-left: 25%;
-    }
 }
 
 @media screen and (min-width: 1025px) {
     .removeActor{
         width: 52px;
         height: 52px;
-        left: 85%;
-        top: 1%;
     }
 
-    .btnSort{
+    .btnSort, .btnSelect{
         height: 52px;
-        /* width: 441px; */
-        width: 45%;
-        float: left;
         font-size: 27px;
-        line-height: 120%;
-    }
-
-    .btnSelect{
-        height: 52px;
-        /* width: 441px; */
-        width: 45%;
-        float: right;
-        font-size: 27px;
-        line-height: 120%;
     }
 
     .btnReadMore{

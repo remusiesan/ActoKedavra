@@ -42,10 +42,8 @@ const ListOfActors = (props) => {
     if(actors.length > 0){
         return (
             <div className="listOfActors">
-                <div className="filterButtons">
-                    <Button class="btnSort" title="Sort" sortModal={sortModalHandler} />
-                    <Button class="btnSelect" title="Select" selectModal={selectModalHandler} />
-                </div>
+                <Button class="btnSort" title="Sort" sortModal={sortModalHandler} />
+                <Button class="btnSelect" title="Select" selectModal={selectModalHandler} />
                 {actors.map((actor, index) => (
                     <div key={Math.random().toString()} className={index  % 2 === 0 ? "evenCard" : "oddCard"}>
                         <ActorCard>

@@ -52,7 +52,7 @@ code {
 .modalContainer{
   position: fixed;
   top: 0px;
-  z-index: 1000;
+  z-index: 100;
   width: 100%;
 }
 

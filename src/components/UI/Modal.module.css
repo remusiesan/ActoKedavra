@@ -12,41 +12,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height:auto;
-    max-height: 865px;
-    left: calc(50% - 375px/2);
-    top: calc(50% - 865px/2 + 0px);
     background: #FFFFFF;
     border-radius: 24px 24px 0px 0px;
 }
 
 .titleModal{
-    position: static;
-    left: 23.28%;
-    right: 23.28%;
-    top: 0%;
-    bottom: 93.1%;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 700;
     font-size: 24px;
-    line-height: 40px;
-    text-align: center;
     color: #14142B;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
     margin: 0px 0px;
     margin-top: 56px;
 }
 
 @media screen and (min-width: 376px) and (max-width: 1024px) {
-    .containerContainer, .containerModal, .containerContent{
-        width: 100%;  
-        max-height: auto;
-    }
-
     .containerContent form{
         width: 70%;
     }
