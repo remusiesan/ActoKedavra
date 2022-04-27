@@ -318,7 +318,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
     .btnReadMore, .btnReadLess{
         font-weight: 600;
         font-size: 10px;
