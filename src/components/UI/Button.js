@@ -6,87 +6,87 @@ const Button = (props) => {
     const [title, setTitle] = useState(props.title)
     const onClick = () => {
         //Replace if with switch
-        if(title === "Read more"){
+        if (title === "Read more") {
             setTitle("Read less")
             setClassname('btnReadLess')
             props.showMore(true);
         }
 
-        if(title === "Read less"){
+        if (title === "Read less") {
             setTitle("Read more")
             setClassname('btnReadMore')
             props.showMore(false);
         }
 
-        if(classname === "removeActor"){
+        if (classname === "removeActor") {
             props.removeActorId(props.actorId);
         }
 
-        if(classname === "btnEdit"){
+        if (classname === "btnEdit") {
             props.editActorId(props.actorId);
         }
 
-        if(classname === "closeModal"){
+        if (classname === "closeModal") {
             props.closeModal(true);
         }
 
-        if(classname === "btnSelect"){
+        if (classname === "btnSelect") {
             props.selectModal(true);
         }
         
-        if(classname === "btnSort"){
+        if (classname === "btnSort") {
             props.sortModal(true);
         }
 
-        if(classname === "chooseActor"){
+        if (classname === "chooseActor") {
             setClassname('isChooseActor')
             localStorage.setItem("numberOfSelectedActors", parseInt(localStorage.getItem("numberOfSelectedActors")) + 1);
             props.isChoosen(true);
             let arrActorsId = []
-            if(localStorage.getItem("actorsToDelete") !== '')
+            if (localStorage.getItem("actorsToDelete") !== '')
                 arrActorsId = localStorage.getItem("actorsToDelete").split(',')
             arrActorsId.push(props.actorId)
             localStorage.setItem("actorsToDelete",arrActorsId)
             document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].style.opacity=1
-        } else if(classname === "isChooseActor"){
+        } else if (classname === "isChooseActor") {
             setClassname('chooseActor')
-            if(parseInt(localStorage.getItem("numberOfSelectedActors")) > 0){
+            if (parseInt(localStorage.getItem("numberOfSelectedActors")) > 0) {
                 localStorage.setItem("numberOfSelectedActors", parseInt(localStorage.getItem("numberOfSelectedActors")) + -1);
             }
             props.isChoosen(false)
             let arrActorsId = []
             localStorage.getItem("actorsToDelete").split(',').forEach(id => {
-                if(parseInt(id) !== props.actorId)
+                if (parseInt(id) !== props.actorId)
                     arrActorsId.push(id)
             })
             localStorage.setItem("actorsToDelete", arrActorsId)
         }
 
-        if(classname === "selectAll"){
+        if (classname === "selectAll") {
             setClassname('selectAllSelected')
             props.selectedAll(true)
             localStorage.setItem("numberOfSelectedActors", document.getElementsByClassName("listOfActors")[0].getElementsByClassName('evenCard').length + document.getElementsByClassName("listOfActors")[0].getElementsByClassName('oddCard').length)
             document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("h2")[0].textContent = localStorage.getItem("numberOfSelectedActors")+" Selected"
-        } else if(classname === "selectAllSelected"){
+        } else if (classname === "selectAllSelected") {
             setClassname('selectAll')
             props.selectedAll(false)
             localStorage.setItem("numberOfSelectedActors", 0);
             document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("h2")[0].textContent = localStorage.getItem("numberOfSelectedActors")+" Selected"
         }
 
-        if(classname === "btnDelete set_margin_top"){
+        if (classname === "btnDelete set_margin_top") {
             props.deleteActors(true)
         }
 
-        if(classname === "btnSortAscending"){
+        if (classname === "btnSortAscending") {
             props.sortAscending(true)
         }
 
-        if(classname === "btnSortDescending"){
+        if (classname === "btnSortDescending") {
             props.sortDescending(true)
         }
 
-        if(classname === "btnAddNewActor" || classname == 'btnAddNewActor resizeWidth'){
+        if (classname === "btnAddNewActor" || classname === 'btnAddNewActor resizeWidth') {
             props.addNewActor(true)
         }
     }

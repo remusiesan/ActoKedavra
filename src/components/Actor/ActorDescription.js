@@ -8,7 +8,7 @@ const ActorDescription = (props) => {
     const [showMore, setShowMore] = useState(false);
 
     const isShowMore = (result) => {
-        if(result === true){
+        if (result === true) {
             setShowMore(true)
         } else {
             setShowMore(false)
@@ -16,7 +16,7 @@ const ActorDescription = (props) => {
     }
     return (    
         <div className={classes.actorNameDescription}>
-            <p className={classes.description}>{showMore ? description : description.substr(0, window.innerWidth >=1024 ? 25 : 20)+'...'}</p>
+            <p className={classes.description}>{showMore ? description : description.substr(0, window.innerWidth >=1024 ? 25 : 15)+'...'}</p>
             <Button class="btnReadMore" showMore={isShowMore} title="Read more"/>
         </div>
     )

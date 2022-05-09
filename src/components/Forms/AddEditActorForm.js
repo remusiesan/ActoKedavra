@@ -5,12 +5,12 @@ import Button from "../UI/Button";
 
 const AddEditActorForm = (props) => {
     const [applyRequired, setApplyRequired] = useState(false);
-    const [picture, setPicture] = useState(props.actor !== undefined && props.actor.picture !== undefined ? props.actor.picture: "");
-    const [name, setName] = useState(props.actor !== undefined && props.actor.name !== undefined ? props.actor.name: "");
-    const [occupation, setOccupation] = useState(props.actor !== undefined && props.actor.occupation !== undefined ? props.actor.occupation: "");
-    const [hobbies, setHobbies] = useState(props.actor !== undefined && props.actor.hobbies !== undefined ? props.actor.hobbies: "");
-    const [description, setDescription] = useState(props.actor !== undefined && props.actor.short_description !== undefined ? props.actor.short_description: "");;
-    const [remainedCharacters, setRemainedCharacters] = useState(props.actor !== undefined && props.actor.short_description !== undefined ? 180-props.actor.short_description.length : "180");
+    const [picture, setPicture] = useState(props.actor !== undefined && props.actor.picture !== undefined && props.buttonText === 'Update' ? props.actor.picture: "");
+    const [name, setName] = useState(props.actor !== undefined && props.actor.name !== undefined && props.buttonText === 'Update' ? props.actor.name: "");
+    const [occupation, setOccupation] = useState(props.actor !== undefined && props.actor.occupation !== undefined && props.buttonText === 'Update' ? props.actor.occupation: "");
+    const [hobbies, setHobbies] = useState(props.actor !== undefined && props.actor.hobbies !== undefined && props.buttonText === 'Update'? props.actor.hobbies: "");
+    const [description, setDescription] = useState(props.actor !== undefined && props.actor.short_description !== undefined && props.buttonText === 'Update' ? props.actor.short_description: "");;
+    const [remainedCharacters, setRemainedCharacters] = useState(props.actor !== undefined && props.actor.short_description !== undefined && props.buttonText === 'Update'? 180-props.actor.short_description.length : "180");
 
     const changeMyMindHandler = () => {
         props.editModal(false);
@@ -40,10 +40,9 @@ const AddEditActorForm = (props) => {
         event.preventDefault();
         setApplyRequired(true);
         
-        if(picture !== "" && name !== "" && occupation !== "" && hobbies !== "" && description !== ""){
+        if (picture !== "" && name !== "" && occupation !== "" && hobbies !== "" && description !== "") {
             if(props.actionType === "updateActor"){
-                await fetch(`http://localhost:5000/actors/${props.actor.id}`,
-                {
+                await fetch(`http://localhost:5000/actors/${props.actor.id}`, {
                     method: 'PUT',
                     headers: {
                         'Accept': 'application/json',

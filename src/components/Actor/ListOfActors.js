@@ -39,7 +39,7 @@ const ListOfActors = (props) => {
         props.numberOfSelectedActors(localStorage.getItem("numberOfSelectedActors"))
     }
 
-    if(actors.length > 0){
+    if (actors.length > 0) {
         return (
             <div className="listOfActors">
                 <Button class="btnSort" title="Sort" sortModal={sortModalHandler} />

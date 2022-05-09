@@ -37,8 +37,7 @@ function App() {
   }
 
   const getActorForEdit = async(actorId) => {
-    const res = await fetch(`http://localhost:5000/actors/${actorId}`,
-    {
+    const res = await fetch(`http://localhost:5000/actors/${actorId}`, {
         method: 'GET'
     })
     const actor = await res.json()
@@ -59,7 +58,7 @@ function App() {
   
 
   const selectModalHandler = (result) => {
-    if(result){
+    if (result) {
       localStorage.setItem("numberOfSelectedActors", 0);
       localStorage.setItem("actorsToDelete", []);
       setSelectModal(true)
@@ -73,7 +72,7 @@ function App() {
   }
 
   const sortModalHandler = (result) => {
-    if(result){
+    if (result) {
       setSortModal(true)
     } else {
       setSortModal(false)
@@ -81,23 +80,21 @@ function App() {
   }
 
   const numberOfSelectedActorsHandler = (result) => {
-    if(document.getElementsByClassName("modalSelectContainer").length)
+    if (document.getElementsByClassName("modalSelectContainer").length > 0) 
       document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("h2")[0].textContent = result+" Selected"
   }
 
   const selectedAllHandler = (result) => {
-    if(result){
+    if (result) {
       let arrActorsId = []
       actors.forEach(actor => {
         arrActorsId.push(actor.id)
       });
       localStorage.setItem("actorsToDelete", arrActorsId);
       document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].style.opacity=1
-      //document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].disabled=true
       setSelectAll(true)
     } else {
       document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].style.opacity=0.2
-      //document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].disabled=false
       setSelectAll(false)
       localStorage.setItem("actorsToDelete", []);
     }
@@ -112,13 +109,11 @@ function App() {
     })
   }
   const deleteActorsHandler = async(result) => {
-    if(result){
+    if (result) {
       let arrActorIds = localStorage.getItem("actorsToDelete").split(',')
-      //console.log(actors)
-      // const newListOfActors = []
       arrActorIds.forEach(id => {
         var result  = actors.filter(function(actor){return actor.id === parseInt(id)} );
-        if(result.length > 0){
+        if (result.length > 0) {
           setTimeout(() => {
             deleteActorById(result[0].id)
             setActors(actors.splice(actors.findIndex(({id}) => id === parseInt(result[0].id)), 1))
