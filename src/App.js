@@ -78,6 +78,7 @@ function App() {
       setSortModal(false)
     }
   }
+  //..
 
   const numberOfSelectedActorsHandler = (result) => {
     if (document.getElementsByClassName("modalSelectContainer").length > 0) 
