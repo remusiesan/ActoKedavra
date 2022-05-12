@@ -2,7 +2,6 @@
   "name": "ActoKedavra",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://remusiesan.github.io/ActoKedavra",
   "dependencies": {
     "@fontsource/poppins": "^4.5.5",
     "@testing-library/jest-dom": "^5.16.3",
