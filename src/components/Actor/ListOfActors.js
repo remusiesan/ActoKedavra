@@ -14,7 +14,7 @@ const ListOfActors = (props) => {
     const [actors, setActors] = useState(props.actors)
     const removeActorIdHandler = async(id) => {
         //Remove from json server
-        // await fetch(`http://localhost:5000/actors/${id}`,
+        // await fetch(`https://actokedavraserver.herokuapp.com/actors/${id}`,
         // {
         //     method: 'DELETE'
         // })

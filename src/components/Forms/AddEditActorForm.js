@@ -42,7 +42,7 @@ const AddEditActorForm = (props) => {
         
         if (picture !== "" && name !== "" && occupation !== "" && hobbies !== "" && description !== "") {
             if(props.actionType === "updateActor"){
-                await fetch(`http://localhost:5000/actors/${props.actor.id}`, {
+                await fetch(`https://actokedavraserver.herokuapp.com/actors/${props.actor.id}`, {
                     method: 'PUT',
                     headers: {
                         'Accept': 'application/json',

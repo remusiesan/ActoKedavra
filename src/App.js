@@ -31,13 +31,13 @@ function App() {
   }, [])
 
   const fetchActors =  async () => {
-    const res = await fetch('http://localhost:5000/actors')
+    const res = await fetch('https://actokedavraserver.herokuapp.com/actors')
     const data = await res.json()
     return data;
   }
 
   const getActorForEdit = async(actorId) => {
-    const res = await fetch(`http://localhost:5000/actors/${actorId}`, {
+    const res = await fetch(`https://actokedavraserver.herokuapp.com/actors/${actorId}`, {
         method: 'GET'
     })
     const actor = await res.json()
@@ -104,7 +104,7 @@ function App() {
 
   const deleteActorById = async(id) => {
     console.log('The actor was deleted!')
-    await fetch(`http://localhost:5000/actors/${id}`,
+    await fetch(`https://actokedavraserver.herokuapp.com/actors/${id}`,
     {
         method: 'DELETE'
     })
