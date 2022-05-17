@@ -14,6 +14,7 @@ import Select from "../UI/Select";
 
 const ListOfActors = (props) => {
     const [actors, setActors] = useState(props.actors)
+    const [sortActors, setSortActors] = useState(props.actors)
     const removeActorIdHandler = async(id) => {
         //Remove from json server
         // await fetch(`https://actokedavraserver.herokuapp.com/actors/${id}`,
@@ -37,12 +38,22 @@ const ListOfActors = (props) => {
         props.sortModal(true);
     }
 
-    const sortTypeDesktopHandler = (result) => {
-        props.sortTypeDesktop(result);
+    const sortTypeDesktopHandler = async(result) => {
+        const res = await fetch('https://actokedavraserver.herokuapp.com/actors')
+        const data = await res.json()
+        if (parseInt(result) === 2) {
+            setActors(data.sort((a, b) => (b.id > a.id) ? 1 : -1))
+        } else {
+            setActors(data.sort((a, b) => (a.id > b.id) ? 1 : -1))
+        } 
     }
 
     const isChoosenHandler = (result) => {
         props.numberOfSelectedActors(localStorage.getItem("numberOfSelectedActors"))
+    }
+
+    const selectActionHandler = (result) => {
+        props.selectModal(true);
     }
 
     if (actors.length > 0) {
@@ -56,7 +67,7 @@ const ListOfActors = (props) => {
                 ) : (
                     <div className="desktopFilter">
                         <Sort sortTypeDesktop={sortTypeDesktopHandler} />
-                        {/* <Select /> */}
+                        <Select selectAction={selectActionHandler}/>
                     </div> 
                 )}
 

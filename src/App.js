@@ -22,6 +22,7 @@ function App() {
   const [sortModal, setSortModal] = useState(false);
   const [actors, setActors] = useState([])
   const [actor, setActor] = useState([])
+  const [desktopOrder, setDesktopOrder] = useState(false)
   
   const getActors = async () => {
     const actorsFromServer = await fetchActors()
@@ -138,14 +139,6 @@ function App() {
     setSortModal(false)
   }
 
-  const sortTypeDesktopHandler = (result) => {
-    if (parseInt(result) === 2) {
-      setActors(actors.sort((a, b) => (b.id > a.id) ? 1 : -1))
-    } else {
-      setActors(actors.sort((a, b) => (a.id > b.id) ? 1 : -1))
-    }
-  }
-
   const modalAddNewActorHandler = (result) => {
     setAddModal(true)
   }
@@ -162,7 +155,7 @@ function App() {
             <>
               <Header />
               {actors.length > 0 &&
-                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} sortModal={sortModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler} sortTypeDesktop={sortTypeDesktopHandler} > 
+                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} sortModal={sortModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler} > 
                 </ListOfActors>
               }
 

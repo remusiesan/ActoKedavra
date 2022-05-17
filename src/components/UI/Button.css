@@ -112,11 +112,12 @@
     position: absolute;
     width: 35px;
     height: 35px;
-    left: 125px;
     content: url(../../images/empty_choose.png);
     border: none;
     background-color: transparent;
     cursor: pointer;
+    right: 1%;
+    top: 1%;
 }
 
 .isChooseActor{
@@ -400,5 +401,11 @@
     .btnAddNewActor{
         margin-bottom: 150px;
         margin-left: 39%;
+    }
+
+    .btnDelete.set_margin_top {
+        margin-top: 101px !important;
+        margin: 0px auto;
+        margin-bottom: 20px;
     }
 }

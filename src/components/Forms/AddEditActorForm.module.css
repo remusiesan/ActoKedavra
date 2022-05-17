@@ -185,3 +185,14 @@ textarea.fieldRequiredInput{
 @media screen and (min-width: 376px) and (max-width: 1024px) {
     
 }
+
+@media screen and (min-width: 1025px) {
+    .cellChildrens{
+        width: 48%;
+        float: left;
+        margin-right: 2%;
+    }
+    .cellChildrensTextarea{
+        width: 98%;
+    }
+}

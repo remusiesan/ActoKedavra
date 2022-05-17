@@ -10,10 +10,6 @@
 }
 
 .headerLogo{
-    /* position: absolute;
-    left: 35.47%;
-    right: 35.47%;
-    bottom: 17.71%; */
     font-family: 'Poppins';
     font-weight: 700;
     color: #14142B;
@@ -22,11 +18,12 @@
 
 @media screen and (max-width: 376px){
     .header{
-        height: 86px;
+        height: 96px;
     }
 
     .headerLogo{
         font-size: 16px;
+        margin-top: 60px;
     }
 }
 

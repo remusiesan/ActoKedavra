@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from './Select.module.css';
 
-const Select = () => {
+const Select = (props) => {
+    const [selectAction, setSelectAction] = useState(false);
+    const selectHandler = () => {
+        setSelectAction(true);
+        props.selectAction(selectAction);
+    }
     return(
-        <p>Select</p>
+        <button className={classes.selectButton} onClick={selectHandler}>Select</button>
     )
 }
 

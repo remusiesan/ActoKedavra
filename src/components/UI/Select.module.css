@@ -1,0 +1,15 @@
+.selectButton{
+    width: 200px;
+    height: 45px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 24px;
+    align-items: center;
+    color: #14142B;
+    border: none;
+    float: right;
+    margin-right: 3%;
+    margin-top: 24px;
+}
