@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import StyleguidePage from "./StyleguidePage";
 
@@ -22,11 +22,13 @@ function App() {
   const [sortModal, setSortModal] = useState(false);
   const [actors, setActors] = useState([])
   const [actor, setActor] = useState([])
+  
+  const getActors = async () => {
+    const actorsFromServer = await fetchActors()
+    setActors(actorsFromServer)
+  }
+
   useEffect(() => {
-    const getActors = async () => {
-      const actorsFromServer = await fetchActors()
-      setActors(actorsFromServer)
-    }
     getActors()
   }, [])
 
@@ -129,10 +131,19 @@ function App() {
     setActors(actors.sort((a, b) => (a.id > b.id) ? 1 : -1))
     setSortModal(false)
   }
+  
 
   const sortDescendingHandler = (result) => {
     setActors(actors.sort((a, b) => (b.id > a.id) ? 1 : -1))
     setSortModal(false)
+  }
+
+  const sortTypeDesktopHandler = (result) => {
+    if (parseInt(result) === 2) {
+      setActors(actors.sort((a, b) => (b.id > a.id) ? 1 : -1))
+    } else {
+      setActors(actors.sort((a, b) => (a.id > b.id) ? 1 : -1))
+    }
   }
 
   const modalAddNewActorHandler = (result) => {
@@ -151,7 +162,7 @@ function App() {
             <>
               <Header />
               {actors.length > 0 &&
-                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} sortModal={sortModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler}> 
+                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} sortModal={sortModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler} sortTypeDesktop={sortTypeDesktopHandler} > 
                 </ListOfActors>
               }
 

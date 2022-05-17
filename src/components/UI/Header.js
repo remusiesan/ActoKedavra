@@ -4,7 +4,7 @@ import classes from './Header.module.css';
 const Header = () => {
     return(
         <header className={classes.header}>
-            <span className={classes.headerLogo}>ActoKedavra</span>
+            <div className={classes.headerLogo}>ActoKedavra</div>
         </header>
     )
 }

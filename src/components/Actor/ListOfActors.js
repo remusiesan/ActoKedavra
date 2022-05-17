@@ -9,6 +9,8 @@ import ActorNameOccupation from "./ActorNameOccupation";
 import ActorHobbies from "./ActorHobbies";
 import ActorDescription from "./ActorDescription";
 import EmptyState from "../UI/EmptyState";
+import Sort from "../UI/Sort";
+import Select from "../UI/Select";
 
 const ListOfActors = (props) => {
     const [actors, setActors] = useState(props.actors)
@@ -35,6 +37,10 @@ const ListOfActors = (props) => {
         props.sortModal(true);
     }
 
+    const sortTypeDesktopHandler = (result) => {
+        props.sortTypeDesktop(result);
+    }
+
     const isChoosenHandler = (result) => {
         props.numberOfSelectedActors(localStorage.getItem("numberOfSelectedActors"))
     }
@@ -42,8 +48,18 @@ const ListOfActors = (props) => {
     if (actors.length > 0) {
         return (
             <div className="listOfActors">
-                <Button class="btnSort" title="Sort" sortModal={sortModalHandler} />
-                <Button class="btnSelect" title="Select" selectModal={selectModalHandler} />
+                {navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) != null ? (
+                     <>
+                        <Button class="btnSort" title="Sort" sortModal={sortModalHandler} />
+                        <Button class="btnSelect" title="Select" selectModal={selectModalHandler} />
+                     </>
+                ) : (
+                    <div className="desktopFilter">
+                        <Sort sortTypeDesktop={sortTypeDesktopHandler} />
+                        {/* <Select /> */}
+                    </div> 
+                )}
+
                 {actors.map((actor, index) => (
                     <div key={Math.random().toString()} className={index  % 2 === 0 ? "evenCard" : "oddCard"}>
                         <ActorCard>

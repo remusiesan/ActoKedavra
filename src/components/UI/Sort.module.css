@@ -1,0 +1,28 @@
+.sortSelect{
+    padding: 6px 16px;
+    width: 220px;
+    height: 48px;
+    border-radius: 10px;
+    border: none;
+    float: left;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 24px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(../../images/downArrow.png);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: 32px auto, 100%;
+    top: 25px;
+    position: relative;
+}
+
+
+.sortSelect option:checked {
+    background-image: url(../../images/downArrow.png);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: 32px auto, 100%;
+}

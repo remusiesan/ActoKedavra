@@ -1,5 +1,6 @@
 .header{
     position: fixed;
+    text-align: center;
     left: 0%;
     right: 0%;
     top: 0%;
@@ -9,10 +10,10 @@
 }
 
 .headerLogo{
-    position: absolute;
+    /* position: absolute;
     left: 35.47%;
     right: 35.47%;
-    bottom: 17.71%;
+    bottom: 17.71%; */
     font-family: 'Poppins';
     font-weight: 700;
     color: #14142B;
@@ -36,6 +37,8 @@
     .headerLogo{
         font-size: 30px;
         line-height: 36.4px;
+        margin: 0;
+        margin-top: 35px;
     }
 }
 
@@ -45,6 +48,8 @@
     }
     .headerLogo{
         font-size: 32px;
-        line-height: 38.4px;
+        line-height: 38.4px; 
+        margin: 0;
+        margin-top: 25px;
     }
 }
