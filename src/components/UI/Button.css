@@ -126,11 +126,12 @@
     position: absolute;
     width: 35px;
     height: 35px;
-    left: 125px;
     content: url(../../images/is_choose_actor.png);
     border: none;
     background-color: transparent;
     cursor: pointer;
+    right: 1%;
+    top: 1%;
 }
 
 .closeModal{
@@ -317,6 +318,17 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+
+.btnDeleteSelected{
+    display: inline-flex;
+    gap: 16px;
+    width: 155px;
+    float: right;
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    margin-right: 3%;
 }
 
 @media screen and (max-width: 376px) {

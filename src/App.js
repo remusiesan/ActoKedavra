@@ -34,13 +34,13 @@ function App() {
   }, [])
 
   const fetchActors =  async () => {
-    const res = await fetch('https://actokedavraserver.herokuapp.com/actors')
+    const res = await fetch('https://dbactokedavra.herokuapp.com/actors')
     const data = await res.json()
     return data;
   }
 
   const getActorForEdit = async(actorId) => {
-    const res = await fetch(`https://actokedavraserver.herokuapp.com/actors/${actorId}`, {
+    const res = await fetch(`https://dbactokedavra.herokuapp.com/actors/${actorId}`, {
         method: 'GET'
     })
     const actor = await res.json()
@@ -95,19 +95,20 @@ function App() {
         arrActorsId.push(actor.id)
       });
       localStorage.setItem("actorsToDelete", arrActorsId);
-      document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].style.opacity=1
+      if (document.getElementsByClassName("modalSelectContainer")[0] != null)
+        document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].style.opacity=1
       setSelectAll(true)
     } else {
-      document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].style.opacity=0.2
+      if (document.getElementsByClassName("modalSelectContainer")[0] != null)
+        document.getElementsByClassName("modalSelectContainer")[0].getElementsByTagName("button")[2].style.opacity=0.2
       setSelectAll(false)
       localStorage.setItem("actorsToDelete", []);
     }
-
   }
 
   const deleteActorById = async(id) => {
     console.log('The actor was deleted!')
-    await fetch(`https://actokedavraserver.herokuapp.com/actors/${id}`,
+    await fetch(`https://dbactokedavra.herokuapp.com/actors/${id}`,
     {
         method: 'DELETE'
     })
@@ -155,7 +156,7 @@ function App() {
             <>
               <Header />
               {actors.length > 0 &&
-                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} sortModal={sortModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler} > 
+                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} sortModal={sortModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler} selectAllItemsDesktop={selectedAllHandler}> 
                 </ListOfActors>
               }
 
