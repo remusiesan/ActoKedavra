@@ -81,6 +81,10 @@ const Button = (props) => {
             props.deleteActors(true)
         }
 
+        if (classname === "btnDelete btnDeleteSelected") {
+            props.deleteActors(true)
+        }
+
         if (classname === "btnSortAscending") {
             props.sortAscending(true)
         }

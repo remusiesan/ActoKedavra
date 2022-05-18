@@ -120,7 +120,7 @@ function App() {
         var result  = actors.filter(function(actor){return actor.id === parseInt(id)} );
         if (result.length > 0) {
           setTimeout(() => {
-            deleteActorById(result[0].id)
+            // deleteActorById(result[0].id)
             setActors(actors.splice(actors.findIndex(({id}) => id === parseInt(result[0].id)), 1))
           }, 500);
         }

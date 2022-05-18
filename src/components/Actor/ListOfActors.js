@@ -12,6 +12,7 @@ import EmptyState from "../UI/EmptyState";
 import Sort from "../UI/Sort";
 import Select from "../UI/Select";
 import SelectAllDesktop from "../UI/SelectAllDesktop";
+import { func } from "prop-types";
 
 const ListOfActors = (props) => {
     const [actors, setActors] = useState(props.actors)
@@ -35,7 +36,6 @@ const ListOfActors = (props) => {
     }
 
     const selectModalHandler = (result) => {
-        
         props.selectModal(true);
     }
 
@@ -53,13 +53,17 @@ const ListOfActors = (props) => {
         } 
     }
 
-    const isChoosenHandler = (result) => {
+    const isChoosenHandler = (id) => {
         props.numberOfSelectedActors(localStorage.getItem("numberOfSelectedActors"))
     }
 
     const isChoosenHandlerDesktop = (result) => {
-        console.log(result);
         setTimeout(() => {
+            if(document.getElementsByClassName('isChooseActor').length > 0) {
+                document.getElementsByClassName("btnDeleteSelected")[0].style.opacity=1
+            } else {
+                document.getElementsByClassName("btnDeleteSelected")[0].style.opacity=0.2
+            }
             document.getElementsByClassName('numberOfSelectedItems')[0].innerText = document.getElementsByClassName('isChooseActor').length+ " Selected"
         }, 100);
     }
@@ -91,6 +95,21 @@ const ListOfActors = (props) => {
         }, 100);
     }
 
+    const deleteActorsHandler = (result) => {
+        if (result) {
+            let arrActorIds = localStorage.getItem("actorsToDelete").split(',')
+            arrActorIds.forEach(id => {
+              var result  = actors.filter(function(actor){return actor.id === parseInt(id)} );
+              if (result.length > 0) {
+                setTimeout(() => {
+                  setActors(actors.splice(actors.findIndex(({id}) => id === parseInt(result[0].id)), 1))
+                }, 500);
+              }
+            })
+            //...
+          }
+    }
+
     if (actors.length > 0) {
         return (
             <div className="listOfActors">
@@ -110,7 +129,7 @@ const ListOfActors = (props) => {
 
                 {navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) === null && showSelected &&
                     <>
-                       <SelectAllDesktop closeDesktop={closeDesktopHandler} selectAllDesktop={selectAllDesktopHandler} numberOfSelected={numberOfSelected}/>
+                       <SelectAllDesktop closeDesktop={closeDesktopHandler} selectAllDesktop={selectAllDesktopHandler} numberOfSelected={numberOfSelected} deleteActors={deleteActorsHandler}/>
                     </>
                 }
 

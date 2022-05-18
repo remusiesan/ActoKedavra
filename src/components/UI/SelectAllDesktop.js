@@ -12,6 +12,10 @@ const SelectAllDesktop = (props) => {
         props.closeDesktop(true)
     }
 
+    const deleteActorsHandler = () => {
+        props.deleteActors(true)
+    }
+
     return(
         <div className="SelectAllDesktop">
             <div className="selectAllLeft">
@@ -21,7 +25,7 @@ const SelectAllDesktop = (props) => {
                 <p className="selectAllText">Select all</p>
                 <Button class="selectAll" selectedAll={selectedAllHandler} />
             </div>
-            <Button class="btnDelete btnDeleteSelected" title="Delete" />
+            <Button class="btnDelete btnDeleteSelected" deleteActors={deleteActorsHandler} title="Delete" />
         </div>
     )
 }
