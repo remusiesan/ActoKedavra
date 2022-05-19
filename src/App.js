@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
+
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import StyleguidePage from "./StyleguidePage";
 
@@ -14,6 +15,8 @@ import Footer from "./components/UI/Footer";
 import "@fontsource/poppins";
 
 function App() {
+  // const serverUrl = 'http://localhost:5000/actors'
+  const serverUrl = 'https://dbactokedavra.herokuapp.com/actors'
   const [editModal, setEditModal] = useState(false);
   const [addModal, setAddModal] = useState(false);
   const [chooseActor, setChooseActor] = useState(false);
@@ -22,7 +25,7 @@ function App() {
   const [sortModal, setSortModal] = useState(false);
   const [actors, setActors] = useState([])
   const [actor, setActor] = useState([])
-  const [desktopOrder, setDesktopOrder] = useState(false)
+
   
   const getActors = async () => {
     const actorsFromServer = await fetchActors()
@@ -34,13 +37,13 @@ function App() {
   }, [])
 
   const fetchActors =  async () => {
-    const res = await fetch('https://dbactokedavra.herokuapp.com/actors')
+    const res = await fetch(serverUrl)
     const data = await res.json()
     return data;
   }
 
   const getActorForEdit = async(actorId) => {
-    const res = await fetch(`https://dbactokedavra.herokuapp.com/actors/${actorId}`, {
+    const res = await fetch(`${serverUrl}/${actorId}`, {
         method: 'GET'
     })
     const actor = await res.json()
@@ -106,13 +109,13 @@ function App() {
     }
   }
 
-  const deleteActorById = async(id) => {
-    console.log('The actor was deleted!')
-    await fetch(`https://dbactokedavra.herokuapp.com/actors/${id}`,
-    {
-        method: 'DELETE'
-    })
-  }
+  // const deleteActorById = async(id) => {
+  //   console.log('The actor was deleted!')
+  //   await fetch(`${serverUrl}/${id}`,
+  //   {
+  //       method: 'DELETE'
+  //   })
+  // }
   const deleteActorsHandler = async(result) => {
     if (result) {
       let arrActorIds = localStorage.getItem("actorsToDelete").split(',')
@@ -156,7 +159,7 @@ function App() {
             <>
               <Header />
               {actors.length > 0 &&
-                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} sortModal={sortModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler} selectAllItemsDesktop={selectedAllHandler}> 
+                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} sortModal={sortModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler} selectAllItemsDesktop={selectedAllHandler} showAddActor={modalAddNewActorHandler} deleteSelectedActors={deleteActorsHandler}> 
                 </ListOfActors>
               }
 

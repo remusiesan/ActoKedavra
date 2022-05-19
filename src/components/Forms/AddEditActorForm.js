@@ -4,6 +4,9 @@ import classes from './AddEditActorForm.module.css';
 import Button from "../UI/Button";
 
 const AddEditActorForm = (props) => {
+    // const serverUrl = 'http://localhost:5000/actors'
+    const serverUrl = 'https://dbactokedavra.herokuapp.com/actors'
+
     const [applyRequired, setApplyRequired] = useState(false);
     const [picture, setPicture] = useState(props.actor !== undefined && props.actor.picture !== undefined && props.buttonText === 'Update' ? props.actor.picture: "");
     const [name, setName] = useState(props.actor !== undefined && props.actor.name !== undefined && props.buttonText === 'Update' ? props.actor.name: "");
@@ -42,7 +45,7 @@ const AddEditActorForm = (props) => {
         
         if (picture !== "" && name !== "" && occupation !== "" && hobbies !== "" && description !== "") {
             if(props.actionType === "updateActor"){
-                await fetch(`https://dbactokedavra.herokuapp.com/actors/${props.actor.id}`, {
+                await fetch(`${serverUrl}/${props.actor.id}`, {
                     method: 'PUT',
                     headers: {
                         'Accept': 'application/json',

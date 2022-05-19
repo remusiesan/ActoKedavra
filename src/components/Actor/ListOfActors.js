@@ -12,9 +12,11 @@ import EmptyState from "../UI/EmptyState";
 import Sort from "../UI/Sort";
 import Select from "../UI/Select";
 import SelectAllDesktop from "../UI/SelectAllDesktop";
-import { func } from "prop-types";
 
 const ListOfActors = (props) => {
+    // const serverUrl = 'http://localhost:5000/actors'
+    const serverUrl = 'https://dbactokedavra.herokuapp.com/actors'
+
     const [actors, setActors] = useState(props.actors)
     const [showSelected, setShowSelected] = useState(false)
     const [chooseActorDesktop, setChooseActorDesktop] = useState(false)
@@ -44,7 +46,7 @@ const ListOfActors = (props) => {
     }
 
     const sortTypeDesktopHandler = async(result) => {
-        const res = await fetch('https://dbactokedavra.herokuapp.com/actors')
+        const res = await fetch(serverUrl)
         const data = await res.json()
         if (parseInt(result) === 2) {
             setActors(data.sort((a, b) => (b.id > a.id) ? 1 : -1))
@@ -92,23 +94,25 @@ const ListOfActors = (props) => {
         }
         setTimeout(() => {
             setNumberOfSelected(document.getElementsByClassName('isChooseActor').length+' Selected')
+            localStorage.setItem("actorsToDelete", [])
+            if (document.getElementsByClassName('isChooseActor').length > 0) {
+                let arrActorsId = []
+                for (let i = 0; i < document.getElementsByClassName('isChooseActor').length; i++) {
+                    arrActorsId.push(document.getElementsByClassName('isChooseActor')[i].parentElement.parentElement.firstChild.value)
+                    
+                }
+                localStorage.setItem("actorsToDelete", arrActorsId);
+            }
         }, 100);
     }
 
-    const deleteActorsHandler = (result) => {
-        if (result) {
-            let arrActorIds = localStorage.getItem("actorsToDelete").split(',')
-            arrActorIds.forEach(id => {
-              var result  = actors.filter(function(actor){return actor.id === parseInt(id)} );
-              if (result.length > 0) {
-                setTimeout(() => {
-                  setActors(actors.splice(actors.findIndex(({id}) => id === parseInt(result[0].id)), 1))
-                }, 500);
-              }
-            })
-            //...
-          }
+    const deleteActorsHandler = async(result) => {
+        props.deleteSelectedActors(true)
     }
+
+    const setAddModalHandler = (result) => {
+        props.showAddActor(true)
+      }
 
     if (actors.length > 0) {
         return (
@@ -135,6 +139,7 @@ const ListOfActors = (props) => {
 
                 {actors.map((actor, index) => (
                     <div key={Math.random().toString()} className={index  % 2 === 0 ? "evenCard" : "oddCard"}>
+                        <input type="hidden" className="actorId" value={actor.id}></input>
                         <ActorCard>
                             {navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) !== null &&
                                 <>
@@ -164,7 +169,7 @@ const ListOfActors = (props) => {
         );
     } 
     return (
-        <EmptyState />
+        <EmptyState setAddModal={setAddModalHandler}/>
     )
 }
 
