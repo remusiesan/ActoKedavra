@@ -62,6 +62,36 @@ const AddEditActorForm = (props) => {
                       })
                 })
                 props.editModal(false);
+            } else if(props.actionType === "addActor") {
+                const res = await fetch(serverUrl)
+                const data = await res.json()
+                let id = 1;
+                if (data.length > 0){
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].id > id) {
+                            id = data[i].id
+                        }
+                    }
+                    id++
+                }
+
+                await fetch(`${serverUrl}`, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "id": id,
+                        "picture": picture,
+                        "name": name,
+                        "occupation": occupation,
+                        "score": 56,
+                        "hobbies": hobbies.split(","),
+                        "short_description": description
+                    })
+                })
+                props.editModal(false);
             } else {
                 props.editModal(false);
             }       

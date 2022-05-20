@@ -109,13 +109,14 @@ function App() {
     }
   }
 
-  // const deleteActorById = async(id) => {
-  //   console.log('The actor was deleted!')
-  //   await fetch(`${serverUrl}/${id}`,
-  //   {
-  //       method: 'DELETE'
-  //   })
-  // }
+  const deleteActorById = async(id) => {
+    console.log('The actor was deleted!')
+    await fetch(`${serverUrl}/${id}`,
+    {
+        method: 'DELETE'
+    })
+  }
+
   const deleteActorsHandler = async(result) => {
     if (result) {
       let arrActorIds = localStorage.getItem("actorsToDelete").split(',')
