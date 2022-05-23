@@ -28,7 +28,7 @@ function App() {
   const [actors, setActors] = useState([])
   const [actor, setActor] = useState([])
   const [maxNumberOfActors, setMaxNumberOfActors] = useState(false)
-  const [deleteleteModal, setDeleteModal] = useState(false)
+  const [deleteModal, setDeleteModal] = useState(false)
   const [actorId, setActorId] = useState(0)
 
   
@@ -250,7 +250,7 @@ function App() {
                   </Modal>
                 </div>
               }
-              {deleteleteModal &&
+              {deleteModal &&
                 <div className="modalContainer">
                   <Modal title={actorId === 0 ? "Are you sure you want to delete the selection?" : "Are you sure you want to delete this actor?"} showCloseButton={true} className="deleteModal" deleteModal={deleteModalHandler}>
                     <br/>
