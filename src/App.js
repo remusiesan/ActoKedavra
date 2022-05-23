@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import StyleguidePage from "./StyleguidePage";
+import classes from './components/Forms/AddEditActorForm.module.css';
 
 import Header from "./components/UI/Header";
 import EmptyState from "./components/UI/EmptyState";
@@ -10,6 +11,7 @@ import Modal from "./components/UI/Modal";
 import AddEditActorForm from "./components/Forms/AddEditActorForm";
 import SelectAll from "./components/UI/SelectAll";
 import Button from "./components/UI/Button";
+import Alert from "./components/UI/Alert";
 import Footer from "./components/UI/Footer";
 
 import "@fontsource/poppins";
@@ -25,6 +27,9 @@ function App() {
   const [sortModal, setSortModal] = useState(false);
   const [actors, setActors] = useState([])
   const [actor, setActor] = useState([])
+  const [maxNumberOfActors, setMaxNumberOfActors] = useState(false)
+  const [deleteleteModal, setDeleteModal] = useState(false)
+  const [actorId, setActorId] = useState(0)
 
   
   const getActors = async () => {
@@ -77,6 +82,10 @@ function App() {
     }
   }
 
+  const deleteModalHandler = (result) => {
+    setDeleteModal(false)
+  }
+
   const sortModalHandler = (result) => {
     if (result) {
       setSortModal(true)
@@ -119,17 +128,14 @@ function App() {
 
   const deleteActorsHandler = async(result) => {
     if (result) {
-      let arrActorIds = localStorage.getItem("actorsToDelete").split(',')
-      arrActorIds.forEach(id => {
-        var result  = actors.filter(function(actor){return actor.id === parseInt(id)} );
-        if (result.length > 0) {
-          setTimeout(() => {
-            // deleteActorById(result[0].id)
-            setActors(actors.splice(actors.findIndex(({id}) => id === parseInt(result[0].id)), 1))
-          }, 500);
-        }
-      })
-      setSelectModal(false)
+      setDeleteModal(true)
+    }
+  }
+
+  const removeItemHandler = (result) => {
+    if (result >= 1) {
+      setDeleteModal(true)
+      setActorId(result)
     }
   }
   
@@ -145,12 +151,48 @@ function App() {
   }
 
   const modalAddNewActorHandler = (result) => {
-    setAddModal(true)
+    if (actors.length > 7) {
+      setMaxNumberOfActors(true)
+    } else {
+      setAddModal(true)
+    }
   }
 
   const setAddModalHandler = (result) => {
     setAddModal(true)
   }
+
+  const hideMaxNumberHandler = (result) => {
+    setMaxNumberOfActors(false)
+  }
+
+  const modalDeleteActorHandler = async(result) => {
+    if (result) {
+      if (actorId > 0) {
+          for (let i = 0; i < actors.length; i++) {
+            if (actors[i].id === actorId) {
+              actors.splice(i, 1);
+              // deleteActorById(actorId)
+              setDeleteModal(false)
+            }
+          }
+      } else {
+        let arrActorIds = localStorage.getItem("actorsToDelete").split(',')
+        arrActorIds.forEach(id => {
+          var result  = actors.filter(function(actor){return actor.id === parseInt(id)} );
+          if (result.length > 0) {
+            setTimeout(() => {
+              // deleteActorById(result[0].id)
+              setActors(actors.splice(actors.findIndex(({id}) => id === parseInt(result[0].id)), 1))
+            }, 500);
+          }
+        })
+        setDeleteModal(false)
+        setSelectModal(false)
+      }
+    }
+  }
+
 
   return (
     <div className="App">
@@ -160,7 +202,7 @@ function App() {
             <>
               <Header />
               {actors.length > 0 &&
-                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} sortModal={sortModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler} selectAllItemsDesktop={selectedAllHandler} showAddActor={modalAddNewActorHandler} deleteSelectedActors={deleteActorsHandler}> 
+                <ListOfActors actors={actors} actorId={getActorForEdit} selectModal={selectModalHandler} sortModal={sortModalHandler} chooseActor={chooseActor} selectAll={selectAll} numberOfSelectedActors={numberOfSelectedActorsHandler} selectAllItemsDesktop={selectedAllHandler} showAddActor={modalAddNewActorHandler} deleteSelectedActors={deleteActorsHandler} removeItem={removeItemHandler}> 
                 </ListOfActors>
               }
 
@@ -186,6 +228,13 @@ function App() {
                 </div>
               }
               
+              {maxNumberOfActors && 
+              <>
+                <Alert type="warningNotification" message="You can add max 7 actors." hideMaxNumber={hideMaxNumberHandler} /> 
+                <br/>
+              </>
+              }
+
               {editModal && 
                 <div className="modalContainer">
                   <Modal title="Edit Actor" showCloseButton={true} className="editModal" editModal={editModalHandler}>
@@ -198,6 +247,15 @@ function App() {
                 <div className="modalContainer">
                   <Modal title="Add new Actor" showCloseButton={true} className="addModal" addModal={addModalHandler}>
                     <AddEditActorForm actor={actor} buttonText="Add" actionType="addActor" editModal={addModalHandler} />
+                  </Modal>
+                </div>
+              }
+              {deleteleteModal &&
+                <div className="modalContainer">
+                  <Modal title={actorId === 0 ? "Are you sure you want to delete the selection?" : "Are you sure you want to delete this actor?"} showCloseButton={true} className="deleteModal" deleteModal={deleteModalHandler}>
+                    <br/>
+                    <Button class="setMargin btnAddNewActor deleteActor" title="Yes, delete" deleteActor={modalDeleteActorHandler} />
+                    <p className={classes.changedMyMind} onClick={deleteModalHandler}>I changed my mind</p>
                   </Modal>
                 </div>
               }

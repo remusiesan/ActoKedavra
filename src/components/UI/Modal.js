@@ -14,6 +14,10 @@ const Modal = (props) => {
                 props.sortModal(false)
             if (props.className === "addModal")
                 props.addModal(false)
+            if (props.className === "removeModal")
+                props.removeModal(false)
+            if (props.className === "deleteModal")
+                props.deleteModal(false)
         } else {
             if (props.className === "editModal")
                 props.editModal(true)
@@ -23,6 +27,10 @@ const Modal = (props) => {
                 props.sortModal(true)
             if (props.className === "addModal")
                 props.addModal(true)
+            if (props.className === "removeModal")
+                props.removeModal(true)
+            if (props.className === "deleteModal")
+                props.deleteModal(true)
         }
     }
     return(

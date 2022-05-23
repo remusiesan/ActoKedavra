@@ -33,6 +33,10 @@ const Button = (props) => {
         if (classname === "btnSelect") {
             props.selectModal(true);
         }
+
+        if (classname === "alertCloseWarning") {
+            props.hideMaxNumber(true);
+        }
         
         if (classname === "btnSort") {
             props.sortModal(true);
@@ -95,6 +99,13 @@ const Button = (props) => {
 
         if (classname === "btnAddNewActor" || classname === 'btnAddNewActor resizeWidth') {
             props.addNewActor(true)
+        }
+
+        if (classname === "btnAddNewActor" || classname === 'btnAddNewActor resizeWidth') {
+            props.addNewActor(true)
+        }
+        if (classname === "setMargin btnAddNewActor deleteActor") {
+            props.deleteActor(true)
         }
     }
     return(

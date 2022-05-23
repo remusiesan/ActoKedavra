@@ -22,18 +22,12 @@ const ListOfActors = (props) => {
     const [chooseActorDesktop, setChooseActorDesktop] = useState(false)
     const [selectAllDesktop, setselectAllDesktop] = useState(false)
     const [numberOfSelected, setNumberOfSelected] = useState('0 Selected')
-    const removeActorIdHandler = async(id) => {
-        //Remove from json server
-        // await fetch(`https://dbactokedavra.herokuapp.com/actors/${id}`,
-        // {
-        //     method: 'DELETE'
-        // })
 
-        //Remove from client side
-        setActors(actors.filter((actor) => actor.id !== id))
+    const removeActorIdHandler = (id) => {
+        props.removeItem(id)
     }
 
-    const editActorIdHandler = async(id) => {
+    const editActorIdHandler = (id) => {
         props.actorId(id)
     }
 
