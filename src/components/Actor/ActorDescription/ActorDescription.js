@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from './ActorDescription.module.css';
 
-import Button from "../UI/Button";
+import Button from "../../UI/Button/Button";
 
 const ActorDescription = (props) => {
     const [description, setDescription] = useState(props.description);

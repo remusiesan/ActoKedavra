@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import classes from './AddEditActorForm.module.css';
 
-import Button from "../UI/Button";
+import Button from "../../UI/Button/Button";
 
 
 const AddEditActorForm = (props) => {
-    // const serverUrl = 'http://localhost:5000/actors'
-    const serverUrl = 'https://dbactokedavra.herokuapp.com/actors'
+    const serverUrl = 'http://localhost:5000/actors'
+    // const serverUrl = 'https://dbactokedavra.herokuapp.com/actors'
 
     const [applyRequired, setApplyRequired] = useState(false);
     const [picture, setPicture] = useState(props.actor !== undefined && props.actor.picture !== undefined && props.buttonText === 'Update' ? props.actor.picture: "");

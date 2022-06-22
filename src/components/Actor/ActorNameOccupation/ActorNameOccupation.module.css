@@ -19,7 +19,7 @@
 .likesIcon{
     flex: none;
     order: 1;
-    background: url("../../images/like.png");
+    background: url("../../../images/like.png");
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 2px;

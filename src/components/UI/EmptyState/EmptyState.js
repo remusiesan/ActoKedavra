@@ -1,7 +1,7 @@
 import React from "react";
 import classes from './EmptyState.module.css';
 
-import Button from "./Button";
+import Button from "../Button/Button";
 
 const EmptyState = (props) => {
     const modalAddNewActorHandler = (result) => {

@@ -2,23 +2,23 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import StyleguidePage from "./StyleguidePage";
-import classes from './components/Forms/AddEditActorForm.module.css';
+import classes from './components/Forms/AddEditActorForm/AddEditActorForm.module.css';
 
-import Header from "./components/UI/Header";
-import EmptyState from "./components/UI/EmptyState";
-import ListOfActors from "./components/Actor/ListOfActors";
-import Modal from "./components/UI/Modal";
-import AddEditActorForm from "./components/Forms/AddEditActorForm";
-import SelectAll from "./components/UI/SelectAll";
-import Button from "./components/UI/Button";
-import Alert from "./components/UI/Alert";
-import Footer from "./components/UI/Footer";
+import Header from "./components/UI/Header/Header";
+import EmptyState from "./components/UI/EmptyState/EmptyState";
+import ListOfActors from "./components/Actor/ListOfActors/ListOfActors";
+import Modal from "./components/UI/Modal/Modal";
+import AddEditActorForm from "./components/Forms/AddEditActorForm/AddEditActorForm";
+import SelectAll from "./components/UI/SelectAll/SelectAll";
+import Button from "./components/UI/Button/Button";
+import Alert from "./components/UI/Alert/Alert";
+import Footer from "./components/UI/Footer/Footer";
 
 import "@fontsource/poppins";
 
 function App() {
-  // const serverUrl = 'http://localhost:5000/actors'
-  const serverUrl = 'https://dbactokedavra.herokuapp.com/actors'
+  const serverUrl = 'http://localhost:5000/actors'
+  // const serverUrl = 'https://dbactokedavra.herokuapp.com/actors'
   const [editModal, setEditModal] = useState(false);
   const [addModal, setAddModal] = useState(false);
   const [chooseActor, setChooseActor] = useState(false);

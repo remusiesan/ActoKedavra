@@ -1,7 +1,6 @@
 import React from "react";
 import './SelectAllDesktop.css';
-import Button from "./Button";
-
+import Button from "../Button/Button";
 const SelectAllDesktop = (props) => {
 
     const selectedAllHandler = (result) => {

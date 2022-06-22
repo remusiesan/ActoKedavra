@@ -2,20 +2,20 @@ import React, { useState } from "react";
 
 import './ListOfActors.css';
 
-import Button from "../UI/Button";
-import ActorCard from "./ActorCard";
-import ActorImage from "./ActorImage";
-import ActorNameOccupation from "./ActorNameOccupation";
-import ActorHobbies from "./ActorHobbies";
-import ActorDescription from "./ActorDescription";
-import EmptyState from "../UI/EmptyState";
-import Sort from "../UI/Sort";
-import Select from "../UI/Select";
-import SelectAllDesktop from "../UI/SelectAllDesktop";
+import Button from "../../UI/Button/Button";
+import ActorCard from "../ActorCard/ActorCard";
+import ActorImage from "../ActorImage/ActorImage";
+import ActorNameOccupation from "../ActorNameOccupation/ActorNameOccupation";
+import ActorHobbies from "../ActorHobbies/ActorHobbies";
+import ActorDescription from "../ActorDescription/ActorDescription";
+import EmptyState from "../../UI/EmptyState/EmptyState";
+import Sort from "../../UI/Sort/Sort";
+import Select from "../../UI/Select/Select";
+import SelectAllDesktop from "../../UI/SelectAllDesktop/SelectAllDesktop";
 
 const ListOfActors = (props) => {
-    // const serverUrl = 'http://localhost:5000/actors'
-    const serverUrl = 'https://dbactokedavra.herokuapp.com/actors'
+    const serverUrl = 'http://localhost:5000/actors'
+    // const serverUrl = 'https://dbactokedavra.herokuapp.com/actors'
 
     const [actors, setActors] = useState(props.actors)
     const [showSelected, setShowSelected] = useState(false)

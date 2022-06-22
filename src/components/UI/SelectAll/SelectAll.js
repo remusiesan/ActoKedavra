@@ -1,7 +1,7 @@
 import React from "react";
 import classes from './SelectAll.module.css';
 
-import Button from "./Button";
+import Button from "../Button/Button";
 
 const SelectAll = (props) => {
     const selectedAllHandler = (result) => {

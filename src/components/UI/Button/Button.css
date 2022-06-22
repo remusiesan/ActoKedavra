@@ -61,12 +61,12 @@
 }
 
 .btnReadMore::after{
-    content: url(../../images/arrow_d.png);
+    content: url(../../../images/arrow_d.png);
     margin-left: 5px;
 }
 
 .btnReadLess::after{
-    content: url(../../images/arrow_u.png);
+    content: url(../../../images/arrow_u.png);
     margin-left: 5px;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .btnEdit::after{
-    content: url(../../images/paint.png);
+    content: url(../../../images/paint.png);
     position: relative;
     left: 5px;
 }
@@ -95,7 +95,7 @@
     display: flex;
     padding: 4px;
     position: absolute;
-    content: url(../../images/remove_actor.png);
+    content: url(../../../images/remove_actor.png);
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -110,7 +110,7 @@
     position: absolute;
     width: 35px;
     height: 35px;
-    content: url(../../images/empty_choose.png);
+    content: url(../../../images/empty_choose.png);
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -124,7 +124,7 @@
     position: absolute;
     width: 35px;
     height: 35px;
-    content: url(../../images/is_choose_actor.png);
+    content: url(../../../images/is_choose_actor.png);
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -133,7 +133,7 @@
 }
 
 .closeModal{
-    content: url(../../images/close_popup.png);
+    content: url(../../../images/close_popup.png);
     width: 35px;
     height: 30px;
     border: none;
@@ -165,7 +165,7 @@
 }
 
 .btnSortAscending::before{
-    content: url(../../images/arrow_up.png);
+    content: url(../../../images/arrow_up.png);
     height: 24px;
     width: 24px;
     margin-right: 10px;
@@ -189,7 +189,7 @@
 }
 
 .btnSortDescending::before{
-    content: url(../../images/arrow_down.png);
+    content: url(../../../images/arrow_down.png);
     height: 24px;
     width: 24px;
     margin-right: 10px;
@@ -247,7 +247,7 @@
 }
 
 .btnDelete::before{
-    content: url(../../images/delete.png);
+    content: url(../../../images/delete.png);
     height: 24px;
     width: 24px;
     margin-right: 10px;
@@ -279,15 +279,15 @@
 }
 
 .alertCloseSuccess::after{
-    content: url(../../images/alert_close_success.png);
+    content: url(../../../images/alert_close_success.png);
 }
 
 .alertCloseWarning::after{
-    content: url(../../images/alert_close_warning.png);
+    content: url(../../../images/alert_close_warning.png);
 }
 
 .alertCloseDanger::after{
-    content: url(../../images/alert_close_danger.png);
+    content: url(../../../images/alert_close_danger.png);
 }
 
 .selectAll{
@@ -298,7 +298,7 @@
     width: 35px;
     height: 35px;
     left: 125px;
-    content: url(../../images/selectall.png);
+    content: url(../../../images/selectall.png);
     z-index: 100;
     border: none;
     background-color: transparent;
@@ -312,7 +312,7 @@
     width: 35px;
     height: 35px;
     left: 125px;
-    content: url(../../images/selectall_selected.png);
+    content: url(../../../images/selectall_selected.png);
     border: none;
     background-color: transparent;
     cursor: pointer;

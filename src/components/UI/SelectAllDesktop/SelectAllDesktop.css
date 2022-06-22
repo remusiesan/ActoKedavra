@@ -9,7 +9,7 @@
 }
 
 .closeSelect{
-    content: url(../../images/close_popup.png);
+    content: url(../../../images/close_popup.png);
     width: 25px;
     height: 25px;
     cursor: pointer;

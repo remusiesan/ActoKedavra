@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import "@fontsource/poppins";
 
-import Header from "./components/UI/Header";
-import Button from "./components/UI/Button";
-import ActorCard from "./components/Actor/ActorCard";
-import ActorImage from "./components/Actor/ActorImage";
-import ActorNameOccupation from "./components/Actor/ActorNameOccupation";
-import ActorHobbies from "./components/Actor/ActorHobbies";
-import ActorDescription from "./components/Actor/ActorDescription";
-import Modal from "./components/UI/Modal";
-import SelectAll from "./components/UI/SelectAll";
-import EmptyState from "./components/UI/EmptyState";
-import Alert from "./components/UI/Alert";
-import AddEditActorForm from "./components/Forms/AddEditActorForm";
-import Footer from "./components/UI/Footer";
+import Header from "./components/UI/Header/Header";
+import Button from "./components/UI/Button/Button";
+import ActorCard from "./components/Actor/ActorCard/ActorCard";
+import ActorImage from "./components/Actor/ActorImage/ActorImage";
+import ActorNameOccupation from "./components/Actor/ActorNameOccupation/ActorNameOccupation";
+import ActorHobbies from "./components/Actor/ActorHobbies/ActorHobbies";
+import ActorDescription from "./components/Actor/ActorDescription/ActorDescription";
+import Modal from "./components/UI/Modal/Modal";
+import SelectAll from "./components/UI/SelectAll/SelectAll";
+import EmptyState from "./components/UI/EmptyState/EmptyState";
+import Alert from "./components/UI/Alert/Alert";
+import AddEditActorForm from "./components/Forms/AddEditActorForm/AddEditActorForm";
+import Footer from "./components/UI/Footer/Footer";
 
 import './StyleguidePage.css';
 
