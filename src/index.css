@@ -49,21 +49,6 @@ code {
   overflow-y: initial;
 }
 
-.modalContainer{
-  position: fixed;
-  top: 0px;
-  z-index: 100;
-  width: 100%;
-}
-
-.modalSelectContainer{
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  z-index: 1000;
-
-}
-
 .presentationBoxButton .btnAddNewActor{
   margin-bottom: 15px;
   margin-left: 0px;
@@ -97,16 +82,14 @@ code {
   display: contents;
 }
 
-@media screen and (min-width: 1025px) {
-  .modalContainer, .modalSelectContainer{
-    position: absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width: 100%;
-    z-index:101;
-    background: rgba(0, 0, 0, 0.7);
-    visibility: visible;
-    transition: opacity 0.5s;
-  }
+.modalContainer, .modalSelectContainer{
+   position: absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width: 100%;
+  z-index:101;
+  background: rgba(0, 0, 0, 0.7);
+  visibility: visible;
+  transition: opacity 0.5s;
 }

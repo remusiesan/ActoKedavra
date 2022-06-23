@@ -1,52 +1,42 @@
+.formCustom{
+    margin-left: 64px;
+    margin-right: 64px;
+}
+
 .cellChildrens{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    position: static;
     width: auto;
     height: 84px;
-    left: 0px;
-    top: 0px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 24px 0px; 
+    margin-top: 24px;
+}
+.rowChildrens{
+    display: table;
+    width: 100%;
+}
+
+.leftcellChildrens{
+    display: inline-grid;
+    width: 47%;
+}
+
+.rightcellChildrens{
+    display: inline-grid;
+    width: 47%;
+    float: right;
 }
 
 .cellChildrensTextarea{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    position: static;
-    width: 100%;
     height: 184px;
-    left: 0px;
-    top: 324px;
-    flex: none;
-    order: 3;
-    flex-grow: 0;
     margin: 24px 0px;
 }
 
 .cellChildrensLabel{
-    position: static;
-    width: auto;
-    height: 18px;
-    left: 0px;
-    top: 0px;
     font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
     font-size: 15px;
     line-height: 120%;
     display: flex;
-    align-items: center;
     color: #4E4B66;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
     margin: 5px 0px;
 }
 
@@ -61,22 +51,10 @@
 }
 
 .cellChildrensTextareaLabel{
-    position: static;
-    width: auto;
-    height: 18px;
-    left: 0px;
-    top: 0px;
     font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
     font-size: 15px;
     line-height: 120%;
-    display: flex;
-    align-items: center;
     color: #4E4B66;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
     margin: 16px 0px;
 }
 
@@ -100,99 +78,57 @@
 }
 
 .remainedCharacters{
-    position: static;
-    width: auto;
-    height: 13px;
-    left: 4px;
-    top: 4px;
     font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 300;
     font-size: 10px;
     line-height: 130%;
-    display: flex;
-    align-items: center;
     color: #6E7191;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
     margin: 0px 10px;
     margin-bottom: 10px;
     margin-top: -25px;
 }
 
 input.fieldRequiredInput{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     padding: 16px;
-    position: static;
-    width: 100%;
     height: 50px;
-    left: 0px;
-    top: 0px;
     background: #FFE5F2 !important;
     border: 2px solid #ED2E7E !important;
     box-sizing: border-box;
     border-radius: 10px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 0px;
 }
 
 textarea.fieldRequiredInput{
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     padding: 16px;
-    position: static;
-    width: 100%;
     height: 130px;
-    left: 0px;
-    top: 0px;
     background: #FFE5F2 !important;
     border: 2px solid #ED2E7E !important;
     box-sizing: border-box;
     border-radius: 10px;
     flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 0px;
 }
 
 .fieldRequired{
-    position: static;
-    width: 335px;
-    left: calc(50% - 335px/2);
-    top: 72.5%;
-    bottom: 0%;
     font-family: 'Poppins';
-    font-style: normal;
     font-weight: 600;
     font-size: 13px;
     line-height: 22px;
     display: flex;
-    align-items: center;
     letter-spacing: 0.25px;
     color: #98014C;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 0px;
 }
 
-@media screen and (min-width: 376px) and (max-width: 1024px) {
-    
-}
-
-@media screen and (min-width: 1025px) {
-    .cellChildrens{
-        width: 48%;
-        float: left;
-        margin-right: 2%;
+/* For Mobile */
+@media screen and (max-width: 540px) {
+    .formCustom{
+        margin-left: 20px;
+        margin-right: 20px;
     }
-    .cellChildrensTextarea{
-        width: 98%;
+
+    .leftcellChildrens{
+        width: 100%;
+    }
+    
+    .rightcellChildrens{
+        width: 100%;
     }
 }

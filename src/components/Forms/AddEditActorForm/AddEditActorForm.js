@@ -100,30 +100,42 @@ const AddEditActorForm = (props) => {
     }
 
     return (
-        <form method="POST" onSubmit={addEditActorHandler}>
-            <div className={classes.cellChildrens}>
-                <label className={classes.cellChildrensLabel} htmlFor="picture">Picture</label>
-                <input type="text" id="picture" name="picture" className={(picture === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={pictureHandler} value={picture} />
-                {(picture === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
+        <form method="POST" onSubmit={addEditActorHandler} className={classes.formCustom}>
+            <div className={classes.rowChildrens}>
+                <div className={classes.leftcellChildrens}>
+                    <div className={classes.cellChildrens}>
+                        <label className={classes.cellChildrensLabel} htmlFor="picture">Picture</label>
+                        <input type="text" id="picture" name="picture" className={(picture === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={pictureHandler} value={picture} />
+                        {(picture === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
+                    </div>
+                </div>
+
+                <div className={classes.rightcellChildrens}>
+                    <div className={classes.cellChildrens}>
+                        <label className={classes.cellChildrensLabel} htmlFor="name">Name</label>
+                        <input type="text" id="name" name="name" className={(name === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={nameHandler} value={name} />
+                        {(name === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
+                    </div>
+                </div>
             </div>
 
-            <div className={classes.cellChildrens}>
-                <label className={classes.cellChildrensLabel} htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" className={(name === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={nameHandler} value={name} />
-                {(name === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
+            <div className={classes.rowChildrens}>
+                <div className={classes.leftcellChildrens}>
+                    <div className={classes.cellChildrens}>
+                        <label className={classes.cellChildrensLabel} htmlFor="occupation">Occupation besides acting</label>
+                        <input type="text" id="occupation" name="occupation" className={(occupation === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={occupationHandler} value={occupation} />
+                        {(occupation === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
+                    </div> 
+                </div>
+
+                <div className={classes.rightcellChildrens}>
+                    <div className={classes.cellChildrens}>
+                        <label className={classes.cellChildrensLabel} htmlFor="hobbies">Hobbies</label>
+                        <input type="text" id="hobbies" name="hobbies" className={(hobbies === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={hobbiesHandler}  value={hobbies} />
+                        {(hobbies === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
+                    </div> 
+                </div>
             </div>
-
-            <div className={classes.cellChildrens}>
-                <label className={classes.cellChildrensLabel} htmlFor="occupation">Occupation besides acting</label>
-                <input type="text" id="occupation" name="occupation" className={(occupation === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={occupationHandler} value={occupation} />
-                {(occupation === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
-            </div> 
-
-            <div className={classes.cellChildrens}>
-                <label className={classes.cellChildrensLabel} htmlFor="hobbies">Hobbies</label>
-                <input type="text" id="hobbies" name="hobbies" className={(hobbies === "" && applyRequired) ? classes.fieldRequiredInput : ""} onChange={hobbiesHandler}  value={hobbies} />
-                {(hobbies === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
-            </div> 
 
             <div className={classes.cellChildrensTextarea}>
                 <label className={classes.cellChildrensTextareaLabel} htmlFor="description">Short description</label>
@@ -132,7 +144,7 @@ const AddEditActorForm = (props) => {
                 {(description === "" && applyRequired) ? <span className={classes.fieldRequired}>Field required</span> : null}
             </div> 
 
-            <div className="centerButton"><Button type="submit" class="setMargin btnAddNewActor" title={props.buttonText} /></div>
+            <div className="centerButton"><Button type="submit" class="btnAddNewActor" title={props.buttonText} /></div>
             <p className={classes.changedMyMind} onClick={changeMyMindHandler}>I changed my mind</p>
         </form>
     )

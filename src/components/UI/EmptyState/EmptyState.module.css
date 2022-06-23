@@ -2,23 +2,70 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px;
+    padding: 64px;
+    gap: 80px;
     position: absolute;
-    width: 100%;
+    width: 628px;
+    height: 639px;
+    background: #FFFFFF;
+    border-radius: 24px;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 
-.emojiSadFrown{
-    margin: 24px 0px;
+.emptyStateContainer img{
+    width: 200px;
+    height: 200px;
 }
 
 .emptyStateContainer .description{
+    width: 458px;
     font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 40px;
+    font-size: 36px;
+    line-height: 130%;
     text-align: center;
     color: #14142B;
-    margin: 24px 0px;
+}
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+    .emptyStateContainer{
+        width: 100%;
+        height: auto;
+        gap: 24px;
+        background-color: transparent;
+        padding: 0px;
+    }
+
+    .emptyStateContainer img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .emptyStateContainer .description{
+        font-size: 24px;
+        line-height: 40px;
+        width: 320px;
+        margin: 0px;
+    }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) and (orientation: portrait) {
+    .emptyStateContainer{
+        width: 580px;
+        height: 591px;
+        background-color: transparent;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    .emptyStateContainer{
+        margin-top: 115px;
+        overflow: auto;
+        height: 100%;
+        padding-bottom: 30px;
+    }
 }

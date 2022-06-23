@@ -29,6 +29,7 @@ function App() {
   const [actor, setActor] = useState([])
   const [maxNumberOfActors, setMaxNumberOfActors] = useState(false)
   const [deleteModal, setDeleteModal] = useState(false)
+  const [showEmptyState, setShowEmptyState] = useState(true)
   const [actorId, setActorId] = useState(0)
 
   
@@ -64,6 +65,7 @@ function App() {
   }
   
   const addModalHandler = async(result) => {
+    setShowEmptyState(true)
     setAddModal(false)
   }
   
@@ -159,6 +161,7 @@ function App() {
   }
 
   const setAddModalHandler = (result) => {
+    setShowEmptyState(false)
     setAddModal(true)
   }
 
@@ -206,7 +209,7 @@ function App() {
                 </ListOfActors>
               }
 
-              {actors.length === 0 &&
+              {actors.length === 0 && showEmptyState &&
                 <EmptyState setAddModal={setAddModalHandler}/>
               }
 
@@ -246,7 +249,7 @@ function App() {
               {addModal &&
                 <div className="modalContainer">
                   <Modal title="Add new Actor" showCloseButton={true} className="addModal" addModal={addModalHandler}>
-                    <AddEditActorForm actor={actor} buttonText="Add" actionType="addActor" editModal={addModalHandler} />
+                    <AddEditActorForm actor={actor} buttonText="Add new actor" actionType="addActor" editModal={addModalHandler} />
                   </Modal>
                 </div>
               }
