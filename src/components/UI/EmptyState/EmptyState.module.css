@@ -60,12 +60,3 @@
         background-color: transparent;
     }
 }
-
-@media screen and (orientation:landscape) {
-    .emptyStateContainer{
-        margin-top: 115px;
-        overflow: auto;
-        height: 100%;
-        padding-bottom: 30px;
-    }
-}

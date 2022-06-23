@@ -93,3 +93,7 @@ code {
   visibility: visible;
   transition: opacity 0.5s;
 }
+
+.sortButtons{
+  padding: 0px 20px;
+}

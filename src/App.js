@@ -216,18 +216,24 @@ function App() {
               {selectModal &&
                 <div className="modalSelectContainer">
                   <Modal title={"0 Selected"} className="selectModal" showCloseButton={true} selectModal={selectModalHandler}> 
-                    <SelectAll selectedAll={selectedAllHandler}/>
-                    <Button class="btnDelete set_margin_top" title="Delete" deleteActors={deleteActorsHandler}/>
+                    <div className="sortButtons">
+                      <SelectAll selectedAll={selectedAllHandler}/>
+                      <Button class="btnDelete set_margin_top" title="Delete" deleteActors={deleteActorsHandler}/>
+                    </div>
                   </Modal>
                 </div>
               }
 
               {sortModal &&
                 <div className="modalSelectContainer">
-                  <Modal title="Select type of sort" className="sortModal" showCloseButton={true} sortModal={selectModalHandler}> 
-                    <Button class="btnSortAscending" title="Ascending" sortAscending={sortAscendingHandler} />
-                    <Button class="btnSortDescending" title="Descending" sortDescending={sortDescendingHandler} />
-                  </Modal>
+                  <div className="modalContainer">
+                    <Modal title="Select type of sort" className="sortModal" showCloseButton={true} sortModal={selectModalHandler}> 
+                      <div className="sortButtons">
+                        <Button class="btnSortAscending" title="Ascending" sortAscending={sortAscendingHandler} />
+                        <Button class="btnSortDescending" title="Descending" sortDescending={sortDescendingHandler} />
+                      </div>
+                    </Modal>
+                  </div>
                 </div>
               }
               
@@ -245,7 +251,8 @@ function App() {
                   </Modal>
                 </div>
               }
-              <Button class="btnAddNewActor" title="Add new actor" addNewActor={modalAddNewActorHandler} />
+              <br/>
+              <Button class="btnAddNewActor moveCenter" title="Add new actor" addNewActor={modalAddNewActorHandler} />
               {addModal &&
                 <div className="modalContainer">
                   <Modal title="Add new Actor" showCloseButton={true} className="addModal" addModal={addModalHandler}>

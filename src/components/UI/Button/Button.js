@@ -97,13 +97,10 @@ const Button = (props) => {
             props.sortDescending(true)
         }
 
-        if (classname === "btnAddNewActor" || classname === 'btnAddNewActor resizeWidth') {
+        if (classname === "btnAddNewActor" || classname === 'btnAddNewActor resizeWidth' || classname === "btnAddNewActor moveCenter") {
             props.addNewActor(true)
         }
 
-        if (classname === "btnAddNewActor" || classname === 'btnAddNewActor resizeWidth') {
-            props.addNewActor(true)
-        }
         if (classname === "setMargin btnAddNewActor deleteActor") {
             props.deleteActor(true)
         }
