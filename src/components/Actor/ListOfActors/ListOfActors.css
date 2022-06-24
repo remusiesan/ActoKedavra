@@ -2,6 +2,7 @@
     width: 100%;
     padding-top: 120px;
     display: table;
+    margin-bottom: 150px;
 }
 
 .mobileFilter{
@@ -29,26 +30,52 @@
 }
 
 .containerActors{
-    padding-left: 97px;
-    padding-right: 97px;
+    padding-left: 82px;
+    padding-right: 82px;
 }
 
 .cardActor{
-    width: auto;
     display: inline;
     float: left;
     width: 25%;
 }
 
+.cardActorItem{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.editBtnContainer{
+    width: 100%;
+    display: inline-block;
+}
+
 /* For Mobile */
 @media screen and (max-width: 540px) {
-    .listOfActors{
-        margin-left: 20px;
-        margin-right: 20px;
+    .mobileFilter{
+        padding: 0px 15px;
     }
 
-    .mobileFilter{
-        padding: 0px;
+    .containerActors{
+        padding-left: 20px;
+        padding-right: 10px;
+        display: contents;
+    }
+
+    .cardActor{
+        width: 50%;
+    }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+    .containerActors{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .cardActor{
+        width: 33%;
     }
 }
 

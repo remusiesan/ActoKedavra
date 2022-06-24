@@ -12,13 +12,6 @@
     width: -webkit-fill-available;
 }
 
-@media screen and (max-width: 375px) {
-    .actorImage{
-        min-width: 162px;
-        min-height: 173px;
-    }
-}
-
 @media screen and (min-width: 376px) and (max-width: 1024px) {
     .actorImage{
         width: 100%;

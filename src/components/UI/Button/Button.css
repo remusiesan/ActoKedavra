@@ -14,6 +14,11 @@
     line-height: 24px;
 }
 
+.btnAddNewActorMoveTop {
+    margin-top: -140px;
+    margin-bottom: 140px;
+}
+
 .moveCenter{
     display: block;
     margin-left: auto;
@@ -125,6 +130,34 @@
     opacity: 1;
 }
 
+.btnEdit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    height: 45px;
+    border: 1px solid #6308F7;
+    border-radius: 8px;
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 120%;
+    color: #2A00A2;
+}
+
+.btnEdit::after{
+    background-image: url(../../../images/paint.png);
+    background-size: 20px 20px;
+    display: inline-block;
+    width: 20px; 
+    height: 20px;
+    content:"";
+}
+
 /* For Mobile */
 @media screen and (max-width: 540px) {
     .btnAddNewActor{
@@ -206,6 +239,8 @@
 }
 
 .btnReadMore, .btnReadLess{
+    font-size: 21px;
+line-height: 120%;
     font-family: 'Poppins';
     color: #F4B740;
     border: none;
@@ -223,27 +258,6 @@
 .btnReadLess::after{
     content: url(../../../images/arrow_u.png);
     margin-left: 5px;
-}
-
-.btnEdit{
-    width: 142px;
-    height: 28px;
-    font-family: 'Poppins';
-    font-weight: 600;
-    font-size: 10px;
-    color: #6308F7;
-    margin: 10px 10px;
-    border: 1px solid #6308F7;
-    border-radius: 8px;
-    background: transparent;
-    cursor: pointer;
-
-}
-
-.btnEdit::after{
-    content: url(../../../images/paint.png);
-    position: relative;
-    left: 5px;
 }
 
 .removeActor{

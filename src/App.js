@@ -252,7 +252,7 @@ function App() {
                 </div>
               }
               <br/>
-              <Button class="btnAddNewActor moveCenter" title="Add new actor" addNewActor={modalAddNewActorHandler} />
+              <Button class="btnAddNewActor moveCenter btnAddNewActorMoveTop" title="Add new actor" addNewActor={modalAddNewActorHandler} />
               {addModal &&
                 <div className="modalContainer">
                   <Modal title="Add new Actor" showCloseButton={true} className="addModal" addModal={addModalHandler}>

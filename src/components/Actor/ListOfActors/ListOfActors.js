@@ -134,30 +134,35 @@ const ListOfActors = (props) => {
                 <div className="containerActors"> 
                     {actors.map((actor, index) => (
                         <div key={Math.random().toString()} className={index  % 2 === 0 ? "evenCard cardActor" : "oddCard cardActor"}>
-                            <input type="hidden" className="actorId" value={actor.id}></input>
-                            <ActorCard>
-                                {navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) !== null &&
-                                    <>
-                                        {(!props.chooseActor && !props.selectAll) && <Button class="removeActor" actorId={actor.id} removeActorId={removeActorIdHandler} />}
-                                        {(props.chooseActor && !props.selectAll) && <Button class="chooseActor" actorId={actor.id} isChoosen={isChoosenHandler} />}
-                                        {(props.chooseActor && props.selectAll) && <Button class="isChooseActor" actorId={actor.id} isChoosen={isChoosenHandler} />}
-                                    </>
-                                }
+                            <div className="cardActorItem">
+                                <input type="hidden" className="actorId" value={actor.id}></input>
+                                <ActorCard>
+                                    {navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) !== null &&
+                                        <>
+                                            {(!props.chooseActor && !props.selectAll) && <Button class="removeActor" actorId={actor.id} removeActorId={removeActorIdHandler} />}
+                                            {(props.chooseActor && !props.selectAll) && <Button class="chooseActor" actorId={actor.id} isChoosen={isChoosenHandler} />}
+                                            {(props.chooseActor && props.selectAll) && <Button class="isChooseActor" actorId={actor.id} isChoosen={isChoosenHandler} />}
+                                        </>
+                                    }
 
-                                {navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) === null &&
-                                    <>
-                                        {(!chooseActorDesktop && !selectAllDesktop) && <Button class="removeActor" actorId={actor.id} removeActorId={removeActorIdHandler} />}
-                                        {(chooseActorDesktop && !selectAllDesktop) && <Button class="chooseActor" actorId={actor.id} isChoosen={isChoosenHandlerDesktop} />}
-                                        {(chooseActorDesktop && selectAllDesktop) && <Button class="isChooseActor" actorId={actor.id} isChoosen={isChoosenHandlerDesktop} />}
-                                    </>
-                                }
-                
-                                <ActorImage image={actor.picture} />
-                                {/* <ActorNameOccupation name={actor.name} occupation={actor.occupation} numberOfLikes={actor.score} />
-                                <ActorHobbies hobbies={actor.hobbies}/>
-                                <ActorDescription description={actor.short_description} />
-                                <Button class="btnEdit" actorId={actor.id} title="Edit" editActorId={editActorIdHandler}/> */}
-                            </ActorCard>
+                                    {navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) === null &&
+                                        <>
+                                            {(!chooseActorDesktop && !selectAllDesktop) && <Button class="removeActor" actorId={actor.id} removeActorId={removeActorIdHandler} />}
+                                            {(chooseActorDesktop && !selectAllDesktop) && <Button class="chooseActor" actorId={actor.id} isChoosen={isChoosenHandlerDesktop} />}
+                                            {(chooseActorDesktop && selectAllDesktop) && <Button class="isChooseActor" actorId={actor.id} isChoosen={isChoosenHandlerDesktop} />}
+                                        </>
+                                    }
+                    
+                                    <ActorImage image={actor.picture} />
+                                    <ActorNameOccupation name={actor.name} occupation={actor.occupation} numberOfLikes={actor.score} />
+                                    <ActorHobbies hobbies={actor.hobbies}/>
+                                    <ActorDescription description={actor.short_description} />
+                                    <div className="editBtnContainer">
+                                        <Button class="btnEdit" actorId={actor.id} title="Edit" editActorId={editActorIdHandler}/>
+                                        <br/>
+                                    </div>
+                                </ActorCard>
+                            </div>
                         </div>
                     ))}
                 </div>
